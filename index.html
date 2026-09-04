@@ -67,6 +67,11 @@ textarea{min-height:180px;resize:vertical}.hidden{display:none}.ref{font-size:27
 Ephesians 1:2 – ..."></textarea>
 <br><br>
 <button onclick="bulkImport()">Import Verses</button>
+<br><br>
+<button class="secondary" onclick="exportBackup()">💾 Export Backup</button>
+<button class="secondary" onclick="document.getElementById('backupFile').click()">📤 Restore Backup</button>
+<input id="backupFile" type="file" accept=".json,application/json" class="hidden" onchange="importBackup(event)">
+<p><small>Export a backup to keep all verses and progress safe. Restore Backup merges the backup with your existing verses.</small></p>
 </section>
 
 <section id="progress" class="panel hidden">
@@ -127,6 +132,68 @@ function bulkImport(){
  }
  save();document.getElementById('bulkText').value='';refreshQuiz();alert(count+' verse(s) imported.');
 }
+
+function exportBackup(){
+ const data={version:1,exportedAt:new Date().toISOString(),verses:db.verses,stats:db.stats};
+ const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
+ const url=URL.createObjectURL(blob);
+ const a=document.createElement('a');
+ a.href=url;
+ a.download='bible-memory-backup.json';
+ a.click();
+ URL.revokeObjectURL(url);
+ alert('Backup downloaded successfully.');
+}
+
+function importBackup(event){
+ const file=event.target.files[0];
+ if(!file)return;
+ const reader=new FileReader();
+ reader.onload=function(e){
+  try{
+   const data=JSON.parse(e.target.result);
+   if(!Array.isArray(data.verses)||typeof data.stats!=='object')throw new Error();
+
+   const verses=db.verses||[];
+   const stats=db.stats||{};
+
+   // Merge verses: old verses are kept; matching references are updated.
+   for(const verse of data.verses){
+    if(!verse||!verse.ref||!verse.text)continue;
+    const existing=verses.find(v=>v.ref.toLowerCase()===verse.ref.toLowerCase());
+    if(existing){
+     existing.text=verse.text;
+     existing.set=verse.set||existing.set||'My Verses';
+    }else{
+     verses.push({id:verse.id||Date.now()+Math.random(),set:verse.set||'My Verses',ref:verse.ref,text:verse.text});
+    }
+   }
+
+   // Merge progress without deleting existing progress.
+   for(const [key,value] of Object.entries(data.stats)){
+    if(!stats[key])stats[key]=value;
+    else{
+     stats[key].attempts=Math.max(stats[key].attempts||0,value.attempts||0);
+     stats[key].total=Math.max(stats[key].total||0,value.total||0);
+     stats[key].perfect=Math.max(stats[key].perfect||0,value.perfect||0);
+    }
+   }
+
+   db.verses=verses;
+   db.stats=stats;
+   save();
+   event.target.value='';
+   refreshQuiz();
+   refreshProgress();
+   alert(data.verses.length+' verse(s) restored/merged successfully.');
+  }catch(err){
+   event.target.value='';
+   alert('Invalid Bible Memory backup file.');
+  }
+ };
+ reader.readAsText(file);
+}
+
 function clearForm(){['verseRef','verseText'].forEach(id=>document.getElementById(id).value='')}
 function refreshQuiz(){
  const empty=!db.verses.length;
