@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bible Memory Quiz</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,Arial,sans-serif;background:#f4f1ea;color:#202020}
+header{background:#202b3c;color:white;padding:22px 5%;display:flex;justify-content:space-between;align-items:center}
+header h1{margin:0;font-size:25px} header span{opacity:.8;font-size:14px}
+nav{display:flex;gap:8px;padding:14px 5%;background:white;border-bottom:1px solid #ddd}
+button{border:0;border-radius:9px;padding:11px 16px;font-weight:700;cursor:pointer;background:#202b3c;color:white}
+button.secondary{background:#e8e4db;color:#202020} button.danger{background:#a83232}
+main{max-width:1000px;margin:28px auto;padding:0 18px}.panel{background:white;border-radius:15px;padding:24px;margin-bottom:20px;box-shadow:0 3px 15px #0000000d}
+h2{margin-top:0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+input,textarea,select{width:100%;padding:12px;border:1px solid #ccc;border-radius:9px;font:inherit}
+textarea{min-height:180px;resize:vertical}.hidden{display:none}.ref{font-size:27px;font-weight:800;margin:12px 0}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.stat{background:#f4f1ea;padding:16px;border-radius:10px}.stat b{display:block;font-size:24px}
+#comparison{line-height:2;font-size:17px}.correct{background:#dff3df}.wrong{background:#ffdede;color:#d00000;text-decoration:underline;font-weight:700}.missing{background:#fff0b8;color:#8a6500;font-weight:700}
+.legend span{padding:4px 7px;border-radius:5px;margin-right:6px;font-size:13px}
+@media(max-width:650px){.stats{grid-template-columns:repeat(2,1fr)}header{align-items:flex-start;gap:10px}}
+</style>
+</head>
+<body>
+<header><h1>📖 Bible Memory Quiz</h1><span>Your verses stay in this browser</span></header>
+<nav>
+<button onclick="show('quiz')">Quiz</button>
+<button class="secondary" onclick="show('add')">Add / Import Text</button>
+<button class="secondary" onclick="show('progress')">Progress</button>
+</nav>
+
+<main>
+<section id="quiz" class="panel">
+<h2>Memory Quiz</h2>
+<div id="emptyQuiz">
+<p>Add your own NKJV verse text first. You can paste individual verses or import a larger text set.</p>
+<button onclick="show('add')">Add Verse Text</button>
+</div>
+<div id="quizArea" class="hidden">
+<label>Verse set</label><select id="setSelect" onchange="newQuestion()"></select>
+<div class="ref" id="questionRef"></div>
+<p>Type the verse from memory:</p>
+<textarea id="answer" placeholder="Type the complete verse here..."></textarea>
+<br><br>
+<button onclick="checkAnswer()">Check Answer</button>
+<button class="secondary" onclick="newQuestion()">New Verse</button>
+<div id="result" class="hidden panel" style="margin-top:20px;padding:18px"></div>
+</div>
+</section>
+
+<section id="add" class="panel hidden">
+<h2>Add / Import Your Bible Text</h2>
+<p>This website does not provide or fetch the NKJV text. Paste text that you have permission to use.</p>
+<div class="grid">
+<div><label>Set name</label><input id="setName" placeholder="Ephesians 1–4"></div>
+<div><label>Reference (individual verse)</label><input id="verseRef" placeholder="Ephesians 1:1"></div>
+</div>
+<br>
+<label>Verse text</label><textarea id="verseText" placeholder="Paste the exact verse text here..."></textarea>
+<br><br>
+<button onclick="addVerse()">Add Verse</button>
+<button class="secondary" onclick="clearForm()">Clear</button>
+<hr style="margin:25px 0;border:0;border-top:1px solid #ddd">
+<h3>Bulk import</h3>
+<p>Format each line as <b>Reference – verse text</b>. Example: <i>John 3:16 – [your verse text]</i></p>
+<textarea id="bulkText" placeholder="Ephesians 1:1 – ...
+Ephesians 1:2 – ..."></textarea>
+<br><br>
+<button onclick="bulkImport()">Import Verses</button>
+</section>
+
+<section id="progress" class="panel hidden">
+<h2>Progress</h2>
+<div class="stats">
+<div class="stat"><small>Verses</small><b id="total">0</b></div>
+<div class="stat"><small>Attempts</small><b id="attempts">0</b></div>
+<div class="stat"><small>Average</small><b id="avg">0%</b></div>
+<div class="stat"><small>Perfect</small><b id="perfect">0</b></div>
+</div>
+<br>
+<div id="setList"></div>
+</section>
+</main>
+
+<script>
+const DBKEY="bibleMemoryQuizV1";
+let db=JSON.parse(localStorage.getItem(DBKEY)||'{"verses":[],"stats":{}}');
+let current=null;
+
+function save(){localStorage.setItem(DBKEY,JSON.stringify(db));}
+function show(id){
+ document.querySelectorAll('main section').forEach(x=>x.classList.add('hidden'));
+ document.getElementById(id).classList.remove('hidden');
+ if(id==='quiz') refreshQuiz(); if(id==='progress') refreshProgress();
+}
+function normalize(s){return s.trim().replace(/\s+/g,' ')}
+function tokenize(s){return normalize(s).split(' ').filter(Boolean)}
+function similarity(a,b){
+ const A=tokenize(a),B=tokenize(b),m=A.length,n=B.length;
+ const d=Array.from({length:m+1},()=>Array(n+1).fill(0));
+ for(let i=0;i<=m;i++)d[i][0]=i;
+ for(let j=0;j<=n;j++)d[0][j]=j;
+ for(let i=1;i<=m;i++)for(let j=1;j<=n;j++)
+   d[i][j]=A[i-1].toLowerCase()===B[j-1].toLowerCase()?d[i-1][j-1]:1+Math.min(d[i-1][j],d[i][j-1],d[i-1][j-1]);
+ return Math.max(0,Math.round(100*(1-d[m][n]/Math.max(m,n,1))));
+}
+function addVerse(){
+ const set=document.getElementById('setName').value.trim()||'My Verses';
+ const ref=document.getElementById('verseRef').value.trim(), text=document.getElementById('verseText').value.trim();
+ if(!ref||!text)return alert('Please enter a reference and verse text.');
+ const existing=db.verses.find(v=>v.ref.toLowerCase()===ref.toLowerCase());
+ if(existing){existing.text=text;existing.set=set}else db.verses.push({id:Date.now()+Math.random(),set,ref,text});
+ save(); clearForm(); refreshQuiz(); alert('Verse saved.');
+}
+function bulkImport(){
+ const set=document.getElementById('setName').value.trim()||'Imported Set';
+ const lines=document.getElementById('bulkText').value.split(/\n+/).map(x=>x.trim()).filter(Boolean);
+ let count=0;
+ for(const line of lines){
+   const parts=line.split(/\s+[–—-]\s+|:\s+(?=[A-Z])/);
+   if(parts.length<2)continue;
+   let ref=parts[0].trim(),text=parts.slice(1).join(' – ').trim();
+   if(!ref||!text)continue;
+   const existing=db.verses.find(v=>v.ref.toLowerCase()===ref.toLowerCase());
+   if(existing){existing.text=text;existing.set=set}else db.verses.push({id:Date.now()+Math.random(),set,ref,text});
+   count++;
+ }
+ save();document.getElementById('bulkText').value='';refreshQuiz();alert(count+' verse(s) imported.');
+}
+function clearForm(){['verseRef','verseText'].forEach(id=>document.getElementById(id).value='')}
+function refreshQuiz(){
+ const empty=!db.verses.length;
+ document.getElementById('emptyQuiz').classList.toggle('hidden',!empty);
+ document.getElementById('quizArea').classList.toggle('hidden',empty);
+ if(!empty){
+   const sets=[...new Set(db.verses.map(v=>v.set))];
+   const sel=document.getElementById('setSelect'), old=sel.value;
+   sel.innerHTML=sets.map(s=>`<option>${esc(s)}</option>`).join('');
+   if(sets.includes(old))sel.value=old;
+   if(!current||!db.verses.some(v=>v.id===current.id))newQuestion(); else renderQuestion();
+ }
+}
+function newQuestion(){
+ const set=document.getElementById('setSelect').value;
+ const pool=db.verses.filter(v=>v.set===set);
+ current=pool[Math.floor(Math.random()*pool.length)];
+ document.getElementById('answer').value='';
+ document.getElementById('result').classList.add('hidden');
+ renderQuestion();
+}
+function renderQuestion(){if(current)document.getElementById('questionRef').textContent='Type out '+current.ref}
+function checkAnswer(){
+ if(!current)return;
+ const ans=document.getElementById('answer').value;
+ if(!ans.trim())return alert('Type your answer first.');
+ const score=similarity(ans,current.text);
+ const key=current.id;
+ if(!db.stats[key])db.stats[key]={attempts:0,total:0,perfect:0};
+ db.stats[key].attempts++;db.stats[key].total+=score;if(score===100)db.stats[key].perfect++;
+ save();
+ const A=tokenize(ans),B=tokenize(current.text);
+ let html='', i=0,j=0;
+ while(i<A.length||j<B.length){
+   if(i<A.length&&j<B.length&&A[i].toLowerCase()===B[j].toLowerCase()){html+=`<span class="correct">${esc(A[i])}</span> `;i++;j++}
+   else if(i<A.length&&j<B.length){html+=`<span class="wrong">${esc(A[i])}</span> <span class="missing">${esc(B[j])}</span> `;i++;j++}
+   else if(i<A.length){html+=`<span class="wrong">${esc(A[i])}</span> `;i++}
+   else {html+=`<span class="missing">[${esc(B[j])}]</span> `;j++}
+ }
+ const result=document.getElementById('result');
+ result.classList.remove('hidden');
+ result.innerHTML=`<h3>${score===100?'✅ Perfect!':'Score: '+score+'%'}</h3>
+ <p><b>Reference:</b> ${esc(current.ref)}</p>
+ <p><b>Your answer comparison:</b></p><div id="comparison">${html}</div>
+ <div class="legend"><span class="correct">Correct</span><span class="wrong">Wrong/extra</span><span class="missing">Missing/correct word</span></div>
+ <hr><p><b>Exact stored text:</b><br>${esc(current.text)}</p>`;
+}
+function refreshProgress(){
+ const vals=Object.values(db.stats), total=db.verses.length, attempts=vals.reduce((a,x)=>a+x.attempts,0), points=vals.reduce((a,x)=>a+x.total,0), perfect=vals.reduce((a,x)=>a+x.perfect,0);
+ document.getElementById('total').textContent=total;document.getElementById('attempts').textContent=attempts;
+ document.getElementById('avg').textContent=attempts?Math.round(points/attempts)+'%':'0%';document.getElementById('perfect').textContent=perfect;
+ const sets={};db.verses.forEach(v=>(sets[v.set]??=[]).push(v));
+ document.getElementById('setList').innerHTML=Object.entries(sets).map(([set,vs])=>`<div class="panel"><b>${esc(set)}</b> — ${vs.length} verse(s)</div>`).join('');
+}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+refreshQuiz();
+</script>
+</body>
+</html>
