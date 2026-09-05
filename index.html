@@ -4,505 +4,3047 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bible Memory Quiz</title>
+
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,Arial,sans-serif;background:#f4f1ea;color:#202020}
-header{background:#202b3c;color:white;padding:22px 5%;display:flex;justify-content:space-between;align-items:center}
-header h1{margin:0;font-size:25px} header span{opacity:.8;font-size:14px}
-nav{display:flex;gap:8px;padding:14px 5%;background:white;border-bottom:1px solid #ddd}
-button{border:0;border-radius:9px;padding:11px 16px;font-weight:700;cursor:pointer;background:#202b3c;color:white}
-button.secondary{background:#e8e4db;color:#202020} button.danger{background:#a83232}
-main{max-width:1000px;margin:28px auto;padding:0 18px}.panel{background:white;border-radius:15px;padding:24px;margin-bottom:20px;box-shadow:0 3px 15px #0000000d}
-h2{margin-top:0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
-input,textarea,select{width:100%;padding:12px;border:1px solid #ccc;border-radius:9px;font:inherit}
-textarea{min-height:180px;resize:vertical}.hidden{display:none}.ref{font-size:27px;font-weight:800;margin:12px 0}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.stat{background:#f4f1ea;padding:16px;border-radius:10px}.stat b{display:block;font-size:24px}
-#comparison{line-height:2;font-size:17px}.correct{background:#dff3df}.wrong{background:#ffdede;color:#d00000;text-decoration:underline;font-weight:700}.missing{background:#fff0b8;color:#8a6500;font-weight:700}
-.legend span{padding:4px 7px;border-radius:5px;margin-right:6px;font-size:13px}
-.libraryItem{border:1px solid #ddd;border-radius:12px;padding:16px;margin:10px 0}
-.libraryItem .meta{font-weight:800;margin-bottom:8px}
-.libraryText{white-space:pre-wrap;line-height:1.6;margin:8px 0}
-.editBox{margin-top:12px}
-.editBox textarea{min-height:130px}
-.small{font-size:13px;opacity:.75}
-@media(max-width:650px){.stats{grid-template-columns:repeat(2,1fr)}header{align-items:flex-start;gap:10px}}
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:Inter,system-ui,Arial,sans-serif;
+  background:#f4f1ea;
+  color:#202020
+}
+
+header{
+  background:#202b3c;
+  color:white;
+  padding:22px 5%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center
+}
+
+header h1{
+  margin:0;
+  font-size:25px
+}
+
+header span{
+  opacity:.8;
+  font-size:14px
+}
+
+nav{
+  display:flex;
+  gap:8px;
+  padding:14px 5%;
+  background:white;
+  border-bottom:1px solid #ddd;
+  flex-wrap:wrap
+}
+
+button{
+  border:0;
+  border-radius:9px;
+  padding:11px 16px;
+  font-weight:700;
+  cursor:pointer;
+  background:#202b3c;
+  color:white
+}
+
+button.secondary{
+  background:#e8e4db;
+  color:#202020
+}
+
+button.danger{
+  background:#a83232
+}
+
+button.success{
+  background:#2d7040
+}
+
+main{
+  max-width:1000px;
+  margin:28px auto;
+  padding:0 18px
+}
+
+.panel{
+  background:white;
+  border-radius:15px;
+  padding:24px;
+  margin-bottom:20px;
+  box-shadow:0 3px 15px #0000000d
+}
+
+h2{
+  margin-top:0
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:14px
+}
+
+input,textarea,select{
+  width:100%;
+  padding:12px;
+  border:1px solid #ccc;
+  border-radius:9px;
+  font:inherit
+}
+
+textarea{
+  min-height:180px;
+  resize:vertical
+}
+
+.hidden{
+  display:none
+}
+
+.ref{
+  font-size:27px;
+  font-weight:800;
+  margin:12px 0
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px
+}
+
+.stat{
+  background:#f4f1ea;
+  padding:16px;
+  border-radius:10px
+}
+
+.stat b{
+  display:block;
+  font-size:24px
+}
+
+#comparison{
+  line-height:2;
+  font-size:17px
+}
+
+.correct{
+  background:#dff3df
+}
+
+.wrong{
+  background:#ffdede;
+  color:#d00000;
+  text-decoration:underline;
+  font-weight:700
+}
+
+.missing{
+  background:#fff0b8;
+  color:#8a6500;
+  font-weight:700
+}
+
+.legend span{
+  padding:4px 7px;
+  border-radius:5px;
+  margin-right:6px;
+  font-size:13px
+}
+
+.libraryItem{
+  border:1px solid #ddd;
+  border-radius:12px;
+  padding:16px;
+  margin:10px 0
+}
+
+.libraryItem .meta{
+  font-weight:800;
+  margin-bottom:8px
+}
+
+.libraryText{
+  white-space:pre-wrap;
+  line-height:1.6;
+  margin:8px 0
+}
+
+.editBox{
+  margin-top:12px
+}
+
+.editBox textarea{
+  min-height:130px
+}
+
+.small{
+  font-size:13px;
+  opacity:.75
+}
+
+.importBox{
+  border:1px solid #ddd;
+  border-radius:12px;
+  padding:18px;
+  margin-top:15px;
+  background:#faf9f5
+}
+
+.importActions{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-top:12px
+}
+
+.previewHeader{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom:12px
+}
+
+.previewVerse{
+  border:1px solid #ddd;
+  border-radius:10px;
+  padding:12px;
+  margin:8px 0;
+  background:white
+}
+
+.previewVerse label{
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  cursor:pointer
+}
+
+.previewVerse input[type="checkbox"]{
+  width:auto;
+  margin-top:4px;
+  transform:scale(1.15)
+}
+
+.previewRef{
+  font-weight:800
+}
+
+.previewText{
+  margin-top:5px;
+  line-height:1.5
+}
+
+.chapterBadge{
+  display:inline-block;
+  background:#e8e4db;
+  border-radius:7px;
+  padding:4px 8px;
+  font-size:13px;
+  font-weight:700;
+  margin-left:6px
+}
+
+.notice{
+  padding:12px;
+  border-radius:9px;
+  background:#f4f1ea;
+  margin:10px 0
+}
+
+@media(max-width:650px){
+  .stats{
+    grid-template-columns:repeat(2,1fr)
+  }
+
+  header{
+    align-items:flex-start;
+    gap:10px
+  }
+}
 </style>
 </head>
+
 <body>
-<header><h1>📖 Bible Memory Quiz</h1><span>Your verses stay in this browser</span></header>
+
+<header>
+  <h1>📖 Bible Memory Quiz</h1>
+  <span>Your verses stay in this browser</span>
+</header>
+
 <nav>
-<button onclick="show('quiz')">Quiz</button>
-<button class="secondary" onclick="show('add')">Add / Import Text</button>
-<button class="secondary" onclick="show('progress')">Progress</button>
-<button class="secondary" onclick="show('library')">📚 Library / Edit</button>
+  <button onclick="show('quiz')">Quiz</button>
+  <button class="secondary" onclick="show('add')">Add / Import Text</button>
+  <button class="secondary" onclick="show('progress')">Progress</button>
+  <button class="secondary" onclick="show('library')">📚 Library / Edit</button>
 </nav>
 
 <main>
+
+<!-- ================= QUIZ ================= -->
+
 <section id="quiz" class="panel">
+
 <h2>Memory Quiz</h2>
+
 <div id="emptyQuiz">
-<p>Add your own NKJV verse text first. You can paste individual verses or import a larger text set.</p>
-<button onclick="show('add')">Add Verse Text</button>
+
+<p>
+Add your own NKJV verse text first.
+You can paste individual verses or import a larger text set.
+</p>
+
+<button onclick="show('add')">
+Add Verse Text
+</button>
+
 </div>
+
 <div id="quizArea" class="hidden">
+
 <div class="grid">
-<div><label>Book / Set</label><select id="setSelect" onchange="refreshChapterSelect();newQuestion()"></select></div>
-<div><label>Chapter</label><select id="chapterSelect" onchange="newQuestion()"></select></div>
-<div><label>Quiz mode</label>
-<select id="quizMode" onchange="newQuestion()">
-<option value="random">Random verse</option>
-<option value="all">All verses in chapter</option>
+
+<div>
+<label>Book / Set</label>
+
+<select id="setSelect"
+        onchange="refreshChapterSelect();newQuestion()">
 </select>
 </div>
+
+<div>
+<label>Chapter</label>
+
+<select id="chapterSelect"
+        onchange="newQuestion()">
+</select>
 </div>
+
+<div>
+<label>Quiz mode</label>
+
+<select id="quizMode"
+        onchange="newQuestion()">
+
+<option value="random">
+Random verse
+</option>
+
+<option value="all">
+All verses in chapter
+</option>
+
+</select>
+
+</div>
+
+</div>
+
 <div class="ref" id="questionRef"></div>
-<p>Type the verse from memory:</p>
-<textarea id="answer" placeholder="Type the complete verse here..."></textarea>
+
+<p>
+Type the verse from memory:
+</p>
+
+<textarea
+id="answer"
+placeholder="Type the complete verse here..."></textarea>
+
 <br><br>
-<button onclick="checkAnswer()">Check Answer</button>
-<button class="secondary" onclick="newQuestion()">New Verse</button>
-<div id="result" class="hidden panel" style="margin-top:20px;padding:18px"></div>
+
+<button onclick="checkAnswer()">
+Check Answer
+</button>
+
+<button class="secondary"
+        onclick="newQuestion()">
+New Verse
+</button>
+
+<div id="result"
+     class="hidden panel"
+     style="margin-top:20px;padding:18px">
 </div>
+
+</div>
+
 </section>
+
+
+<!-- ================= ADD / IMPORT ================= -->
 
 <section id="add" class="panel hidden">
-<h2>Add / Import Your Bible Text</h2>
-<p>This website does not provide or fetch the NKJV text. Paste text that you have permission to use.</p>
+
+<h2>
+Add / Import Your Bible Text
+</h2>
+
+<p>
+This website does not provide or fetch the NKJV text.
+Paste text that you have permission to use.
+</p>
+
+
+<!-- SET + CHAPTER -->
+
 <div class="grid">
-<div><label>Set name</label><input id="setName" placeholder="Ephesians 1–4"></div>
-<div><label>Reference (individual verse)</label><input id="verseRef" placeholder="Ephesians 1:1"></div>
+
+<div>
+
+<label>
+Set / Book name
+</label>
+
+<input
+id="setName"
+placeholder="Ephesians">
+
 </div>
+
+
+<div>
+
+<label>
+Chapter
+</label>
+
+<input
+id="importChapter"
+type="number"
+min="1"
+placeholder="Example: 3">
+
+</div>
+
+</div>
+
+
+<div class="notice">
+
+<b>Import instructions:</b>
+
+Enter the book/set and chapter first.
+
+For example:
+
+<b>Ephesians</b> + <b>3</b>
+
+Then paste:
+
+<pre style="white-space:pre-wrap">
+1 – For this reason I, Paul...
+2 – if indeed you have heard...
+3 – how that by revelation...
+</pre>
+
+The website will create:
+
+<b>Ephesians 3:1</b>,
+<b>Ephesians 3:2</b>,
+<b>Ephesians 3:3</b>
+
+</div>
+
+
+<!-- SINGLE VERSE -->
+
+<h3>
+Add One Verse
+</h3>
+
+<div class="grid">
+
+<div>
+
+<label>
+Verse number / reference
+</label>
+
+<input
+id="verseRef"
+placeholder="Example: 3:1 or 1">
+
+</div>
+
+</div>
+
 <br>
-<label>Verse text</label><textarea id="verseText" placeholder="Paste the exact verse text here..."></textarea>
+
+<label>
+Verse text
+</label>
+
+<textarea
+id="verseText"
+placeholder="Paste the exact verse text here...">
+</textarea>
+
 <br><br>
-<button onclick="addVerse()">Add Verse</button>
-<button class="secondary" onclick="clearForm()">Clear</button>
+
+<button onclick="addVerse()">
+Add Verse
+</button>
+
+<button class="secondary"
+        onclick="clearForm()">
+Clear
+</button>
+
+
 <hr style="margin:25px 0;border:0;border-top:1px solid #ddd">
-<h3>Bulk import</h3>
-<p>Format each line as <b>Reference – verse text</b>. Example: <i>John 3:16 – [your verse text]</i></p>
-<textarea id="bulkText" placeholder="Ephesians 1:1 – ...
-Ephesians 1:2 – ..."></textarea>
+
+
+<!-- BULK IMPORT -->
+
+<h3>
+Bulk Import
+</h3>
+
+<p>
+Paste one verse per line.
+</p>
+
+<p class="small">
+
+Supported formats:
+
 <br><br>
-<button onclick="bulkImport()">Import Verses</button>
+
+<b>1 – Verse text</b>
+
+<br>
+
+<b>1. Verse text</b>
+
+<br>
+
+<b>1: Verse text</b>
+
+<br>
+
+<b>Ephesians 3:1 – Verse text</b>
+
+</p>
+
+
+<div class="importBox">
+
+<label>
+Bulk verse text
+</label>
+
+<textarea
+id="bulkText"
+placeholder="1 – Verse text here...
+2 – Verse text here...
+3 – Verse text here...
+4 – Verse text here...">
+</textarea>
+
+
+<div class="importActions">
+
+<button onclick="previewBulkImport()">
+🔍 Preview Verses
+</button>
+
+<button class="secondary"
+        onclick="clearBulkImport()">
+Clear
+</button>
+
+</div>
+
+</div>
+
+
+<!-- PREVIEW -->
+
+<div id="importPreview"
+     class="hidden importBox">
+
+<div class="previewHeader">
+
+<div>
+
+<h3 style="margin:0">
+Select Verses to Import
+</h3>
+
+<div id="previewCount"
+     class="small">
+</div>
+
+</div>
+
+
+<div class="importActions"
+     style="margin-top:0">
+
+<button class="secondary"
+        onclick="selectAllPreview(true)">
+☑ Select All
+</button>
+
+<button class="secondary"
+        onclick="selectAllPreview(false)">
+☐ Deselect All
+</button>
+
+</div>
+
+</div>
+
+
+<div id="previewList">
+</div>
+
+
+<div class="importActions">
+
+<button class="success"
+        onclick="importSelectedVerses()">
+💾 Import Selected Verses
+</button>
+
+<button class="secondary"
+        onclick="document.getElementById('importPreview').classList.add('hidden')">
+Cancel Preview
+</button>
+
+</div>
+
+</div>
+
 </section>
+
+
+<!-- ================= LIBRARY ================= -->
 
 <section id="library" class="panel hidden">
-<h2>📚 Verse Library</h2>
-<p>Edit any imported verse here. Changes are saved permanently in this browser and immediately become the quiz reference.</p>
+
+<h2>
+📚 Verse Library
+</h2>
+
+<p>
+Edit any imported verse here.
+Changes are saved permanently in this browser
+and immediately become the quiz reference.
+</p>
+
+
 <div class="grid">
-<div><label>Search</label><input id="librarySearch" placeholder="Search reference or text..." oninput="refreshLibrary()"></div>
-<div><label>Filter by set</label><select id="librarySet" onchange="refreshLibrary()"><option value="">All sets</option></select></div>
+
+<div>
+
+<label>
+Search
+</label>
+
+<input
+id="librarySearch"
+placeholder="Search reference or text..."
+oninput="refreshLibrary()">
+
 </div>
+
+
+<div>
+
+<label>
+Filter by set
+</label>
+
+<select id="librarySet"
+        onchange="refreshLibrary()">
+
+<option value="">
+All sets
+</option>
+
+</select>
+
+</div>
+
+</div>
+
+
 <br>
-<div id="libraryTree"></div>
+
+<div id="libraryTree">
+</div>
+
+
 <hr style="margin:25px 0;border:0;border-top:1px solid #ddd">
-<h3>All verses</h3>
-<div id="libraryList"></div>
+
+
+<h3>
+All verses
+</h3>
+
+<div id="libraryList">
+</div>
+
 </section>
+
+
+<!-- ================= PROGRESS ================= -->
 
 <section id="progress" class="panel hidden">
-<h2>Progress</h2>
+
+<h2>
+Progress
+</h2>
+
 <div class="stats">
-<div class="stat"><small>Verses</small><b id="total">0</b></div>
-<div class="stat"><small>Attempts</small><b id="attempts">0</b></div>
-<div class="stat"><small>Average</small><b id="avg">0%</b></div>
-<div class="stat"><small>Perfect</small><b id="perfect">0</b></div>
+
+<div class="stat">
+<small>Verses</small>
+<b id="total">0</b>
 </div>
+
+<div class="stat">
+<small>Attempts</small>
+<b id="attempts">0</b>
+</div>
+
+<div class="stat">
+<small>Average</small>
+<b id="avg">0%</b>
+</div>
+
+<div class="stat">
+<small>Perfect</small>
+<b id="perfect">0</b>
+</div>
+
+</div>
+
 <br>
-<div id="setList"></div>
+
+<div id="setList">
+</div>
+
 </section>
+
 </main>
 
-<script>
-/*
-  Bible Memory Quiz
-  Storage: IndexedDB (persistent browser database).
-  A localStorage migration is included so existing V1 data is not lost.
-*/
-const DB_NAME="bibleMemoryQuizDB";
-const DB_VERSION=1;
-const STORE="verses";
-const STATS="stats";
 
-let db={verses:[],stats:{}};
-let current=null;
-let editingId=null;
-let database=null;
+<script>
+
+/*
+========================================================
+BIBLE MEMORY QUIZ
+========================================================
+
+Permanent storage:
+IndexedDB
+
+Features:
+- Set/book selection
+- Chapter selection during import
+- Bulk verse preview
+- Individual verse checkboxes
+- Select all / deselect all
+- Permanent verse editing
+- Permanent deletion
+- Chapter filtering
+- Wrong/extra words in red
+========================================================
+*/
+
+
+const DB_NAME = "bibleMemoryQuizDB";
+const DB_VERSION = 1;
+
+const STORE = "verses";
+const STATS = "stats";
+
+
+let db = {
+  verses: [],
+  stats: {}
+};
+
+let current = null;
+let editingId = null;
+let database = null;
+
+let pendingImport = [];
+
+
+/* =====================================================
+   INDEXED DB
+===================================================== */
 
 function openDB(){
+
   return new Promise((resolve,reject)=>{
-    const req=indexedDB.open(DB_NAME,DB_VERSION);
-    req.onupgradeneeded=e=>{
-      const d=e.target.result;
-      if(!d.objectStoreNames.contains(STORE)) d.createObjectStore(STORE,{keyPath:"id"});
-      if(!d.objectStoreNames.contains(STATS)) d.createObjectStore(STATS,{keyPath:"id"});
+
+    const req =
+      indexedDB.open(DB_NAME,DB_VERSION);
+
+
+    req.onupgradeneeded = e => {
+
+      const d = e.target.result;
+
+
+      if(!d.objectStoreNames.contains(STORE)){
+
+        d.createObjectStore(
+          STORE,
+          {keyPath:"id"}
+        );
+
+      }
+
+
+      if(!d.objectStoreNames.contains(STATS)){
+
+        d.createObjectStore(
+          STATS,
+          {keyPath:"id"}
+        );
+
+      }
+
     };
-    req.onsuccess=async e=>{
-      database=e.target.result;
+
+
+    req.onsuccess = async e => {
+
+      database = e.target.result;
+
       await loadDB();
+
       await migrateOldStorage();
+
       resolve();
+
     };
-    req.onerror=()=>reject(req.error);
+
+
+    req.onerror = () => {
+
+      reject(req.error);
+
+    };
+
   });
+
 }
+
 
 function tx(store,mode="readonly"){
-  return database.transaction(store,mode).objectStore(store);
+
+  return database
+    .transaction(store,mode)
+    .objectStore(store);
+
 }
+
 
 function idbPut(store,value){
+
   return new Promise((resolve,reject)=>{
-    const req=tx(store,"readwrite").put(value);
-    req.onsuccess=()=>resolve();
-    req.onerror=()=>reject(req.error);
+
+    const req =
+      tx(store,"readwrite").put(value);
+
+
+    req.onsuccess = () => resolve();
+
+    req.onerror = () => reject(req.error);
+
   });
+
 }
+
 
 function idbDelete(store,id){
+
   return new Promise((resolve,reject)=>{
-    const req=tx(store,"readwrite").delete(id);
-    req.onsuccess=()=>resolve();
-    req.onerror=()=>reject(req.error);
+
+    const req =
+      tx(store,"readwrite").delete(id);
+
+
+    req.onsuccess = () => resolve();
+
+    req.onerror = () => reject(req.error);
+
   });
+
 }
+
 
 function idbAll(store){
+
   return new Promise((resolve,reject)=>{
-    const req=tx(store).getAll();
-    req.onsuccess=()=>resolve(req.result||[]);
-    req.onerror=()=>reject(req.error);
+
+    const req =
+      tx(store).getAll();
+
+
+    req.onsuccess = () =>
+      resolve(req.result || []);
+
+
+    req.onerror = () =>
+      reject(req.error);
+
   });
+
 }
+
 
 async function loadDB(){
-  db.verses=await idbAll(STORE);
-  const stats=await idbAll(STATS);
-  db.stats={};
-  stats.forEach(x=>db.stats[x.id]=x);
+
+  db.verses = await idbAll(STORE);
+
+  const stats =
+    await idbAll(STATS);
+
+
+  db.stats = {};
+
+  stats.forEach(x=>{
+    db.stats[x.id] = x;
+  });
+
 }
+
 
 async function migrateOldStorage(){
-  const old=localStorage.getItem("bibleMemoryQuizV1");
+
+  const old =
+    localStorage.getItem(
+      "bibleMemoryQuizV1"
+    );
+
+
   if(!old)return;
+
+
   try{
-    const parsed=JSON.parse(old);
-    for(const v of (parsed.verses||[])) await idbPut(STORE,v);
-    for(const [id,s] of Object.entries(parsed.stats||{}))
-      await idbPut(STATS,{id,...s});
-    localStorage.removeItem("bibleMemoryQuizV1");
+
+    const parsed =
+      JSON.parse(old);
+
+
+    for(
+      const v of
+      (parsed.verses || [])
+    ){
+
+      await idbPut(
+        STORE,
+        v
+      );
+
+    }
+
+
+    for(
+      const [id,s] of
+      Object.entries(
+        parsed.stats || {}
+      )
+    ){
+
+      await idbPut(
+        STATS,
+        {
+          id,
+          ...s
+        }
+      );
+
+    }
+
+
+    localStorage.removeItem(
+      "bibleMemoryQuizV1"
+    );
+
+
     await loadDB();
-  }catch(e){console.warn("Migration skipped",e)}
+
+  }
+
+  catch(e){
+
+    console.warn(
+      "Migration skipped",
+      e
+    );
+
+  }
+
 }
 
-async function saveVerse(v){ await idbPut(STORE,v); }
-async function saveStat(id,s){ await idbPut(STATS,{id,...s}); }
+
+async function saveVerse(v){
+
+  await idbPut(
+    STORE,
+    v
+  );
+
+}
+
+
+async function saveStat(id,s){
+
+  await idbPut(
+    STATS,
+    {
+      id,
+      ...s
+    }
+  );
+
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
 
 function show(id){
-  document.querySelectorAll('main section').forEach(x=>x.classList.add('hidden'));
-  document.getElementById(id).classList.remove('hidden');
-  if(id==='quiz') refreshQuiz();
-  if(id==='progress') refreshProgress();
-  if(id==='library') refreshLibrary();
+
+  document
+    .querySelectorAll("main section")
+    .forEach(x =>
+      x.classList.add("hidden")
+    );
+
+
+  document
+    .getElementById(id)
+    .classList.remove("hidden");
+
+
+  if(id === "quiz")
+    refreshQuiz();
+
+
+  if(id === "progress")
+    refreshProgress();
+
+
+  if(id === "library")
+    refreshLibrary();
+
 }
 
-function normalize(s){return s.trim().replace(/\s+/g,' ')}
-function tokenize(s){return normalize(s).split(' ').filter(Boolean)}
+
+/* =====================================================
+   TEXT HELPERS
+===================================================== */
+
+function normalize(s){
+
+  return String(s)
+    .trim()
+    .replace(/\s+/g," ");
+
+}
+
+
+function tokenize(s){
+
+  return normalize(s)
+    .split(" ")
+    .filter(Boolean);
+
+}
+
+
+/* =====================================================
+   SCORE
+===================================================== */
 
 function similarity(a,b){
-  const A=tokenize(a),B=tokenize(b),m=A.length,n=B.length;
-  const d=Array.from({length:m+1},()=>Array(n+1).fill(0));
-  for(let i=0;i<=m;i++)d[i][0]=i;
-  for(let j=0;j<=n;j++)d[0][j]=j;
-  for(let i=1;i<=m;i++)for(let j=1;j<=n;j++)
-    d[i][j]=A[i-1].toLowerCase()===B[j-1].toLowerCase()
-      ?d[i-1][j-1]
-      :1+Math.min(d[i-1][j],d[i][j-1],d[i-1][j-1]);
-  return Math.max(0,Math.round(100*(1-d[m][n]/Math.max(m,n,1))));
+
+  const A = tokenize(a);
+  const B = tokenize(b);
+
+  const m = A.length;
+  const n = B.length;
+
+
+  const d =
+    Array.from(
+      {length:m+1},
+      () =>
+        Array(n+1).fill(0)
+    );
+
+
+  for(let i=0;i<=m;i++)
+    d[i][0] = i;
+
+
+  for(let j=0;j<=n;j++)
+    d[0][j] = j;
+
+
+  for(let i=1;i<=m;i++){
+
+    for(let j=1;j<=n;j++){
+
+      d[i][j] =
+        A[i-1].toLowerCase()
+        ===
+        B[j-1].toLowerCase()
+
+        ?
+
+        d[i-1][j-1]
+
+        :
+
+        1 +
+        Math.min(
+          d[i-1][j],
+          d[i][j-1],
+          d[i-1][j-1]
+        );
+
+    }
+
+  }
+
+
+  return Math.max(
+    0,
+    Math.round(
+      100 *
+      (
+        1 -
+        d[m][n] /
+        Math.max(m,n,1)
+      )
+    )
+  );
+
 }
+
+
+/* =====================================================
+   ADD SINGLE VERSE
+===================================================== */
 
 async function addVerse(){
-  const set=document.getElementById('setName').value.trim()||'My Verses';
-  const ref=document.getElementById('verseRef').value.trim();
-  const text=document.getElementById('verseText').value.trim();
-  if(!ref||!text)return alert('Please enter a reference and verse text.');
 
-  const existing=db.verses.find(v=>v.ref.toLowerCase()===ref.toLowerCase());
-  if(existing){existing.text=text;existing.set=set;await saveVerse(existing)}
+  const set =
+    document
+      .getElementById("setName")
+      .value
+      .trim()
+    || "My Verses";
+
+
+  let ref =
+    document
+      .getElementById("verseRef")
+      .value
+      .trim();
+
+
+  const chapter =
+    document
+      .getElementById("importChapter")
+      .value
+      .trim();
+
+
+  const text =
+    document
+      .getElementById("verseText")
+      .value
+      .trim();
+
+
+  if(!ref || !text){
+
+    return alert(
+      "Please enter a reference and verse text."
+    );
+
+  }
+
+
+  /*
+    If user enters only:
+    1
+
+    and chapter is:
+    3
+
+    and set is:
+    Ephesians
+
+    automatically create:
+    Ephesians 3:1
+  */
+
+  if(
+    /^\d+$/.test(ref)
+    &&
+    chapter
+  ){
+
+    ref =
+      set +
+      " " +
+      chapter +
+      ":" +
+      ref;
+
+  }
+
+
+  /*
+    If user enters:
+    3:1
+
+    automatically add book name.
+  */
+
+  if(
+    /^\d+:\d+$/.test(ref)
+  ){
+
+    ref =
+      set +
+      " " +
+      ref;
+
+  }
+
+
+  const existing =
+    db.verses.find(
+      v =>
+        v.ref.toLowerCase()
+        ===
+        ref.toLowerCase()
+    );
+
+
+  if(existing){
+
+    existing.text = text;
+    existing.set = set;
+
+    await saveVerse(existing);
+
+  }
+
   else{
-    const v={id:crypto.randomUUID(),set,ref,text};
+
+    const v = {
+
+      id:
+        crypto.randomUUID(),
+
+      set,
+      ref,
+      text
+
+    };
+
+
     db.verses.push(v);
+
     await saveVerse(v);
-  }
-  clearForm();refreshQuiz();refreshLibrary();
-  alert('Verse saved permanently.');
-}
 
-async function bulkImport(){
-  const set=document.getElementById('setName').value.trim()||'Imported Set';
-  const lines=document.getElementById('bulkText').value.split(/\n+/).map(x=>x.trim()).filter(Boolean);
-  let count=0;
-
-  for(const line of lines){
-    const parts=line.split(/\s+[–—-]\s+|:\s+(?=[A-Z])/);
-    if(parts.length<2)continue;
-    const ref=parts[0].trim(),text=parts.slice(1).join(' – ').trim();
-    if(!ref||!text)continue;
-
-    const existing=db.verses.find(v=>v.ref.toLowerCase()===ref.toLowerCase());
-    if(existing){existing.text=text;existing.set=set;await saveVerse(existing)}
-    else{
-      const v={id:crypto.randomUUID(),set,ref,text};
-      db.verses.push(v);
-      await saveVerse(v);
-    }
-    count++;
   }
 
-  document.getElementById('bulkText').value='';
-  refreshQuiz();refreshLibrary();
-  alert(count+' verse(s) imported and saved permanently.');
-}
 
-function clearForm(){
-  ['verseRef','verseText'].forEach(id=>document.getElementById(id).value='')
-}
+  clearForm();
 
-function chapterOf(ref){
-  const m=String(ref).match(/\\b(?:chapter\\s*)?(\\d+)(?::|$)/i);
-  return m?m[1]:'Other';
-}
-
-function refreshChapterSelect(){
-  const set=document.getElementById('setSelect').value;
-  const chapters=[...new Set(db.verses.filter(v=>v.set===set).map(v=>chapterOf(v.ref)))];
-  chapters.sort((a,b)=>{
-    if(a==='Other')return 1;if(b==='Other')return -1;
-    return Number(a)-Number(b);
-  });
-  const sel=document.getElementById('chapterSelect');
-  const old=sel.value;
-  sel.innerHTML='<option value="">All chapters</option>'+
-    chapters.map(c=>`<option value="${esc(c)}">Chapter ${esc(c)}</option>`).join('');
-  if(chapters.includes(old))sel.value=old;
-}
-
-function refreshQuiz(){
-  const empty=!db.verses.length;
-  document.getElementById('emptyQuiz').classList.toggle('hidden',!empty);
-  document.getElementById('quizArea').classList.toggle('hidden',empty);
-  if(!empty){
-    const sets=[...new Set(db.verses.map(v=>v.set))];
-    const sel=document.getElementById('setSelect'),old=sel.value;
-    sel.innerHTML=sets.map(s=>`<option value="${esc(s)}">${esc(s)}</option>`).join('');
-    if(sets.includes(old))sel.value=old;
-    refreshChapterSelect();
-    if(!current||!db.verses.some(v=>v.id===current.id))newQuestion();
-    else renderQuestion();
-  }
-}
-
-function quizPool(){
-  const set=document.getElementById('setSelect').value;
-  const chapter=document.getElementById('chapterSelect').value;
-  return db.verses.filter(v=>v.set===set&&(!chapter||chapterOf(v.ref)===chapter));
-}
-
-function newQuestion(){
-  const pool=quizPool();
-  if(!pool.length)return;
-  current=pool[Math.floor(Math.random()*pool.length)];
-  document.getElementById('answer').value='';
-  document.getElementById('result').classList.add('hidden');
-  renderQuestion();
-}
-
-function renderQuestion(){
-  if(current)document.getElementById('questionRef').textContent='Type out '+current.ref;
-}
-
-async function checkAnswer(){
-  if(!current)return;
-  const ans=document.getElementById('answer').value;
-  if(!ans.trim())return alert('Type your answer first.');
-
-  const score=similarity(ans,current.text);
-  const key=current.id;
-  if(!db.stats[key])db.stats[key]={id:key,attempts:0,total:0,perfect:0};
-  db.stats[key].attempts++;
-  db.stats[key].total+=score;
-  if(score===100)db.stats[key].perfect++;
-  await saveStat(key,db.stats[key]);
-
-  const A=tokenize(ans),B=tokenize(current.text);
-  let html='',i=0,j=0;
-
-  while(i<A.length||j<B.length){
-    if(i<A.length&&j<B.length&&A[i].toLowerCase()===B[j].toLowerCase()){
-      html+=`<span class="correct">${esc(A[i])}</span> `;
-      i++;j++;
-    }else if(i<A.length&&j<B.length){
-      html+=`<span class="wrong">${esc(A[i])}</span> <span class="missing">${esc(B[j])}</span> `;
-      i++;j++;
-    }else if(i<A.length){
-      html+=`<span class="wrong">${esc(A[i])}</span> `;
-      i++;
-    }else{
-      html+=`<span class="missing">[${esc(B[j])}]</span> `;
-      j++;
-    }
-  }
-
-  const result=document.getElementById('result');
-  result.classList.remove('hidden');
-  result.innerHTML=`<h3>${score===100?'✅ Perfect!':'Score: '+score+'%'}</h3>
-  <p><b>Reference:</b> ${esc(current.ref)}</p>
-  <p><b>Your answer comparison:</b></p>
-  <div id="comparison">${html}</div>
-  <div class="legend">
-    <span class="correct">Correct</span>
-    <span class="wrong">Wrong/extra</span>
-    <span class="missing">Missing/correct word</span>
-  </div>
-  <hr><p><b>Exact stored text:</b><br>${esc(current.text)}</p>`;
-}
-
-function refreshProgress(){
-  const vals=Object.values(db.stats);
-  const total=db.verses.length;
-  const attempts=vals.reduce((a,x)=>a+x.attempts,0);
-  const points=vals.reduce((a,x)=>a+x.total,0);
-  const perfect=vals.reduce((a,x)=>a+x.perfect,0);
-  document.getElementById('total').textContent=total;
-  document.getElementById('attempts').textContent=attempts;
-  document.getElementById('avg').textContent=attempts?Math.round(points/attempts)+'%':'0%';
-  document.getElementById('perfect').textContent=perfect;
-
-  const sets={};
-  db.verses.forEach(v=>(sets[v.set]??=[]).push(v));
-  document.getElementById('setList').innerHTML=Object.entries(sets)
-    .map(([set,vs])=>`<div class="panel"><b>${esc(set)}</b> — ${vs.length} verse(s)</div>`).join('');
-}
-
-function refreshLibrary(){
-  const search=(document.getElementById('librarySearch')?.value||'').toLowerCase();
-  const filter=document.getElementById('librarySet')?.value||'';
-
-  const sets=[...new Set(db.verses.map(v=>v.set))].sort();
-  const sel=document.getElementById('librarySet');
-  if(sel){
-    const old=sel.value;
-    sel.innerHTML='<option value="">All sets</option>'+sets.map(s=>`<option value="${esc(s)}">${esc(s)}</option>`).join('');
-    if(sets.includes(old))sel.value=old;
-  }
-
-  const list=db.verses.filter(v=>{
-    const matchesSearch=!search||(v.ref+' '+v.text+' '+v.set).toLowerCase().includes(search);
-    const matchesSet=!filter||v.set===filter;
-    return matchesSearch&&matchesSet;
-  });
-
-  const tree={};
-  list.forEach(v=>{
-    tree[v.set]??={};
-    const ch=chapterOf(v.ref);
-    tree[v.set][ch]??=[];
-    tree[v.set][ch].push(v);
-  });
-
-  document.getElementById('libraryTree').innerHTML=Object.entries(tree).map(([set,chapters])=>
-    `<div class="libraryItem"><div class="meta">📖 ${esc(set)}</div>`+
-    Object.entries(chapters).sort((a,b)=>{
-      if(a[0]==='Other')return 1;if(b[0]==='Other')return -1;
-      return Number(a[0])-Number(b[0]);
-    }).map(([ch,vs])=>
-      `<div style="margin:8px 0 8px 12px"><b>Chapter ${esc(ch)}</b> — ${vs.length} verse(s)</div>`
-    ).join('')+'</div>'
-  ).join('') || '<p class="small">No matching chapters.</p>';
-
-  document.getElementById('libraryList').innerHTML=list.length
-    ?list.map(v=>libraryCard(v)).join('')
-    :'<p class="small">No verses found.</p>';
-}
-
-function libraryCard(v){
-  const editing=editingId===v.id;
-  if(editing){
-    return `<div class="libraryItem">
-      <div class="meta">${esc(v.ref)} <span class="small">(${esc(v.set)})</span></div>
-      <div class="editBox">
-        <label>Reference</label>
-        <input id="editRef-${esc(v.id)}" value="${esc(v.ref)}">
-        <br><br>
-        <label>Set</label>
-        <input id="editSet-${esc(v.id)}" value="${esc(v.set)}">
-        <br><br>
-        <label>Verse text</label>
-        <textarea id="editText-${esc(v.id)}">${esc(v.text)}</textarea>
-        <br><br>
-        <button onclick="saveEditedVerse('${esc(v.id)}')">💾 Save Changes</button>
-        <button class="secondary" onclick="cancelEdit()">Cancel</button>
-      </div>
-    </div>`;
-  }
-  return `<div class="libraryItem">
-    <div class="meta">${esc(v.ref)} <span class="small">(${esc(v.set)})</span></div>
-    <div class="libraryText">${esc(v.text)}</div>
-    <button onclick="startEdit('${esc(v.id)}')">✏️ Edit</button>
-    <button class="danger" onclick="deleteVerse('${esc(v.id)}')">🗑 Delete</button>
-  </div>`;
-}
-
-function startEdit(id){editingId=id;refreshLibrary()}
-
-function cancelEdit(){editingId=null;refreshLibrary()}
-
-async function saveEditedVerse(id){
-  const v=db.verses.find(x=>String(x.id)===String(id));
-  if(!v)return;
-
-  const ref=document.getElementById('editRef-'+id).value.trim();
-  const set=document.getElementById('editSet-'+id).value.trim()||'My Verses';
-  const text=document.getElementById('editText-'+id).value.trim();
-
-  if(!ref||!text)return alert('Reference and verse text cannot be empty.');
-
-  const duplicate=db.verses.find(x=>x.id!==v.id&&x.ref.toLowerCase()===ref.toLowerCase());
-  if(duplicate)return alert('Another verse already uses this reference.');
-
-  v.ref=ref;v.set=set;v.text=text;
-  await saveVerse(v);
-
-  if(current&&current.id===v.id)current=v;
-  editingId=null;
-  refreshQuiz();refreshLibrary();refreshProgress();
-  alert('Verse updated permanently.');
-}
-
-async function deleteVerse(id){
-  const v=db.verses.find(x=>String(x.id)===String(id));
-  if(!v)return;
-  if(!confirm('Delete '+v.ref+' permanently?'))return;
-
-  await idbDelete(STORE,v.id);
-  if(db.stats[v.id]){await idbDelete(STATS,v.id);delete db.stats[v.id]}
-  db.verses=db.verses.filter(x=>x.id!==v.id);
-  if(current&&current.id===v.id)current=null;
-  refreshQuiz();refreshLibrary();refreshProgress();
-}
-
-function esc(s){
-  return String(s).replace(/[&<>"']/g,c=>({
-    '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
-  }[c]));
-}
-
-openDB().then(()=>{
   refreshQuiz();
   refreshLibrary();
-}).catch(err=>{
+  refreshProgress();
+
+
+  alert(
+    "Verse saved permanently."
+  );
+
+}
+
+
+/* =====================================================
+   PARSE BULK LINE
+===================================================== */
+
+function parseBulkLine(
+  line,
+  set,
+  chapter
+){
+
+  line = line.trim();
+
+  if(!line)return null;
+
+
+  let ref = null;
+  let text = null;
+
+
+  /*
+    COMPLETE REFERENCE
+
+    Ephesians 3:1 – text
+  */
+
+  let m =
+    line.match(
+      /^(.+?\s+\d+:\d+)\s*(?:–|—|-)\s*(.+)$/
+    );
+
+
+  if(m){
+
+    ref = m[1].trim();
+    text = m[2].trim();
+
+  }
+
+  else{
+
+    /*
+      1 – text
+      1. text
+    */
+
+    m =
+      line.match(
+        /^(\d+)\s*(?:–|—|-|\.)\s*(.+)$/
+      );
+
+
+    if(m){
+
+      ref =
+        set +
+        " " +
+        chapter +
+        ":" +
+        m[1];
+
+      text =
+        m[2].trim();
+
+    }
+
+    else{
+
+      /*
+        1: Text
+      */
+
+      m =
+        line.match(
+          /^(\d+)\s*:\s+(.+)$/
+        );
+
+
+      if(m){
+
+        ref =
+          set +
+          " " +
+          chapter +
+          ":" +
+          m[1];
+
+        text =
+          m[2].trim();
+
+      }
+
+    }
+
+  }
+
+
+  if(!ref || !text)
+    return null;
+
+
+  return {
+
+    ref,
+    text,
+    set,
+    chapter
+
+  };
+
+}
+
+
+/* =====================================================
+   BULK PREVIEW
+===================================================== */
+
+function previewBulkImport(){
+
+  const set =
+    document
+      .getElementById("setName")
+      .value
+      .trim()
+    ||
+    "Imported Set";
+
+
+  const chapter =
+    document
+      .getElementById("importChapter")
+      .value
+      .trim();
+
+
+  if(!chapter){
+
+    return alert(
+      "Please enter a chapter number first."
+    );
+
+  }
+
+
+  const lines =
+    document
+      .getElementById("bulkText")
+      .value
+      .split(/\n+/)
+      .map(x=>x.trim())
+      .filter(Boolean);
+
+
+  if(!lines.length){
+
+    return alert(
+      "Please paste your verses first."
+    );
+
+  }
+
+
+  pendingImport = [];
+
+  const invalid = [];
+
+
+  lines.forEach(
+    (line,index)=>{
+
+      const parsed =
+        parseBulkLine(
+          line,
+          set,
+          chapter
+        );
+
+
+      if(parsed){
+
+        pendingImport.push(
+          parsed
+        );
+
+      }
+
+      else{
+
+        invalid.push(
+          index + 1
+        );
+
+      }
+
+    }
+  );
+
+
+  if(!pendingImport.length){
+
+    return alert(
+      'No verses could be recognized.\n\n' +
+      'Use formats such as:\n' +
+      '1 – verse text\n' +
+      '1. verse text\n' +
+      'Ephesians 3:1 – verse text'
+    );
+
+  }
+
+
+  document
+    .getElementById("previewCount")
+    .textContent =
+
+      pendingImport.length +
+      " verse(s) recognized" +
+
+      (
+        invalid.length
+        ?
+        " • " +
+        invalid.length +
+        " line(s) could not be recognized"
+        :
+        ""
+      ) +
+
+      " • All are selected by default.";
+
+
+  document
+    .getElementById("previewList")
+    .innerHTML =
+
+      pendingImport
+        .map(
+          (v,i)=>`
+
+          <div class="previewVerse">
+
+            <label>
+
+              <input
+                type="checkbox"
+                class="importCheck"
+                data-index="${i}"
+                checked
+              >
+
+              <span>
+
+                <span class="previewRef">
+                  ${esc(v.ref)}
+                </span>
+
+                <span class="chapterBadge">
+                  Chapter ${esc(v.chapter)}
+                </span>
+
+                <div class="previewText">
+                  ${esc(v.text)}
+                </div>
+
+              </span>
+
+            </label>
+
+          </div>
+
+          `
+        )
+        .join("");
+
+
+  document
+    .getElementById("importPreview")
+    .classList.remove("hidden");
+
+
+  document
+    .getElementById("importPreview")
+    .scrollIntoView({
+      behavior:"smooth",
+      block:"start"
+    });
+
+}
+
+
+/* =====================================================
+   SELECT / DESELECT
+===================================================== */
+
+function selectAllPreview(value){
+
+  document
+    .querySelectorAll(".importCheck")
+    .forEach(
+      x => x.checked = value
+    );
+
+}
+
+
+/* =====================================================
+   IMPORT SELECTED VERSES
+===================================================== */
+
+async function importSelectedVerses(){
+
+  const checks =
+    [
+      ...document
+        .querySelectorAll(
+          ".importCheck:checked"
+        )
+    ];
+
+
+  const selected =
+    checks
+      .map(
+        c =>
+          pendingImport[
+            Number(c.dataset.index)
+          ]
+      )
+      .filter(Boolean);
+
+
+  if(!selected.length){
+
+    return alert(
+      "Select at least one verse."
+    );
+
+  }
+
+
+  let added = 0;
+  let updated = 0;
+
+
+  for(
+    const item of selected
+  ){
+
+    const existing =
+      db.verses.find(
+        v =>
+          v.ref.toLowerCase()
+          ===
+          item.ref.toLowerCase()
+      );
+
+
+    if(existing){
+
+      existing.text =
+        item.text;
+
+      existing.set =
+        item.set;
+
+      await saveVerse(
+        existing
+      );
+
+      updated++;
+
+    }
+
+    else{
+
+      const v = {
+
+        id:
+          crypto.randomUUID(),
+
+        set:
+          item.set,
+
+        ref:
+          item.ref,
+
+        text:
+          item.text
+
+      };
+
+
+      db.verses.push(v);
+
+      await saveVerse(v);
+
+      added++;
+
+    }
+
+  }
+
+
+  document
+    .getElementById("bulkText")
+    .value = "";
+
+
+  document
+    .getElementById("importPreview")
+    .classList.add("hidden");
+
+
+  pendingImport = [];
+
+
+  refreshQuiz();
+  refreshLibrary();
+  refreshProgress();
+
+
+  alert(
+    selected.length +
+    " verse(s) imported.\n\n" +
+    added +
+    " new • " +
+    updated +
+    " updated"
+  );
+
+}
+
+
+/* =====================================================
+   CLEAR BULK IMPORT
+===================================================== */
+
+function clearBulkImport(){
+
+  document
+    .getElementById("bulkText")
+    .value = "";
+
+
+  document
+    .getElementById("importPreview")
+    .classList.add("hidden");
+
+
+  pendingImport = [];
+
+}
+
+
+/* =====================================================
+   CLEAR SINGLE VERSE FORM
+===================================================== */
+
+function clearForm(){
+
+  [
+    "verseRef",
+    "verseText"
+  ]
+  .forEach(
+    id =>
+      document
+        .getElementById(id)
+        .value = ""
+  );
+
+}
+
+
+/* =====================================================
+   CHAPTER DETECTION
+===================================================== */
+
+function chapterOf(ref){
+
+  const s =
+    String(ref).trim();
+
+
+  /*
+    Ephesians 3:1
+  */
+
+  let m =
+    s.match(
+      /\b(\d+)\s*:\s*\d+(?:\s*[a-z])?\s*$/i
+    );
+
+
+  if(m)
+    return m[1];
+
+
+  /*
+    Chapter 3
+  */
+
+  m =
+    s.match(
+      /\bchapter\s*(\d+)\b/i
+    );
+
+
+  if(m)
+    return m[1];
+
+
+  /*
+    Just "3"
+  */
+
+  m =
+    s.match(
+      /^\s*(\d+)\s*$/
+    );
+
+
+  return m
+    ? m[1]
+    : "Other";
+
+}
+
+
+/* =====================================================
+   QUIZ CHAPTER SELECT
+===================================================== */
+
+function refreshChapterSelect(){
+
+  const set =
+    document
+      .getElementById("setSelect")
+      .value;
+
+
+  const chapters =
+    [
+      ...new Set(
+        db.verses
+          .filter(
+            v =>
+              v.set === set
+          )
+          .map(
+            v =>
+              chapterOf(v.ref)
+          )
+      )
+    ];
+
+
+  chapters.sort(
+    (a,b)=>{
+
+      if(a==="Other")
+        return 1;
+
+      if(b==="Other")
+        return -1;
+
+      return Number(a)-Number(b);
+
+    }
+  );
+
+
+  const sel =
+    document
+      .getElementById(
+        "chapterSelect"
+      );
+
+
+  const old =
+    sel.value;
+
+
+  sel.innerHTML =
+
+    '<option value="">All chapters</option>' +
+
+    chapters
+      .map(
+        c =>
+          `<option value="${esc(c)}">
+            Chapter ${esc(c)}
+          </option>`
+      )
+      .join("");
+
+
+  if(
+    chapters.includes(old)
+  ){
+
+    sel.value = old;
+
+  }
+
+}
+
+
+/* =====================================================
+   REFRESH QUIZ
+===================================================== */
+
+function refreshQuiz(){
+
+  const empty =
+    !db.verses.length;
+
+
+  document
+    .getElementById("emptyQuiz")
+    .classList
+    .toggle(
+      "hidden",
+      !empty
+    );
+
+
+  document
+    .getElementById("quizArea")
+    .classList
+    .toggle(
+      "hidden",
+      empty
+    );
+
+
+  if(!empty){
+
+    const sets =
+      [
+        ...new Set(
+          db.verses.map(
+            v => v.set
+          )
+        )
+      ];
+
+
+    const sel =
+      document
+        .getElementById(
+          "setSelect"
+        );
+
+
+    const old =
+      sel.value;
+
+
+    sel.innerHTML =
+      sets
+        .map(
+          s =>
+            `<option value="${esc(s)}">
+              ${esc(s)}
+            </option>`
+        )
+        .join("");
+
+
+    if(
+      sets.includes(old)
+    ){
+
+      sel.value = old;
+
+    }
+
+
+    refreshChapterSelect();
+
+
+    if(
+      !current ||
+      !db.verses.some(
+        v => v.id === current.id
+      )
+    ){
+
+      newQuestion();
+
+    }
+
+    else{
+
+      const pool =
+        quizPool();
+
+
+      if(
+        !pool.some(
+          v =>
+            v.id === current.id
+        )
+      ){
+
+        newQuestion();
+
+      }
+
+      else{
+
+        renderQuestion();
+
+      }
+
+    }
+
+  }
+
+}
+
+
+/* =====================================================
+   QUIZ POOL
+===================================================== */
+
+function quizPool(){
+
+  const set =
+    document
+      .getElementById(
+        "setSelect"
+      )
+      .value;
+
+
+  const chapter =
+    document
+      .getElementById(
+        "chapterSelect"
+      )
+      .value;
+
+
+  return db.verses.filter(
+    v =>
+
+      v.set === set &&
+
+      (
+        !chapter ||
+        chapterOf(v.ref) === chapter
+      )
+
+  );
+
+}
+
+
+/* =====================================================
+   NEW QUESTION
+===================================================== */
+
+function newQuestion(){
+
+  const pool =
+    quizPool();
+
+
+  if(!pool.length){
+
+    current = null;
+
+    document
+      .getElementById(
+        "questionRef"
+      )
+      .textContent =
+        "No verses in this chapter.";
+
+    return;
+
+  }
+
+
+  current =
+    pool[
+      Math.floor(
+        Math.random() *
+        pool.length
+      )
+    ];
+
+
+  document
+    .getElementById("answer")
+    .value = "";
+
+
+  document
+    .getElementById("result")
+    .classList
+    .add("hidden");
+
+
+  renderQuestion();
+
+}
+
+
+/* =====================================================
+   QUESTION
+===================================================== */
+
+function renderQuestion(){
+
+  if(current){
+
+    document
+      .getElementById(
+        "questionRef"
+      )
+      .textContent =
+        "Type out " +
+        current.ref;
+
+  }
+
+}
+
+
+/* =====================================================
+   CHECK ANSWER
+===================================================== */
+
+async function checkAnswer(){
+
+  if(!current)
+    return;
+
+
+  const ans =
+    document
+      .getElementById(
+        "answer"
+      )
+      .value;
+
+
+  if(!ans.trim()){
+
+    return alert(
+      "Type your answer first."
+    );
+
+  }
+
+
+  const score =
+    similarity(
+      ans,
+      current.text
+    );
+
+
+  const key =
+    current.id;
+
+
+  if(!db.stats[key]){
+
+    db.stats[key] = {
+
+      id:key,
+      attempts:0,
+      total:0,
+      perfect:0
+
+    };
+
+  }
+
+
+  db.stats[key].attempts++;
+
+  db.stats[key].total += score;
+
+
+  if(score === 100)
+    db.stats[key].perfect++;
+
+
+  await saveStat(
+    key,
+    db.stats[key]
+  );
+
+
+  const A =
+    tokenize(ans);
+
+
+  const B =
+    tokenize(current.text);
+
+
+  let html = "";
+
+  let i = 0;
+  let j = 0;
+
+
+  while(
+    i < A.length ||
+    j < B.length
+  ){
+
+    if(
+      i < A.length &&
+      j < B.length &&
+      A[i].toLowerCase()
+      ===
+      B[j].toLowerCase()
+    ){
+
+      html +=
+        `<span class="correct">
+          ${esc(A[i])}
+        </span> `;
+
+      i++;
+      j++;
+
+    }
+
+    else if(
+      i < A.length &&
+      j < B.length
+    ){
+
+      html +=
+        `<span class="wrong">
+          ${esc(A[i])}
+        </span>
+        <span class="missing">
+          ${esc(B[j])}
+        </span> `;
+
+      i++;
+      j++;
+
+    }
+
+    else if(
+      i < A.length
+    ){
+
+      html +=
+        `<span class="wrong">
+          ${esc(A[i])}
+        </span> `;
+
+      i++;
+
+    }
+
+    else{
+
+      html +=
+        `<span class="missing">
+          [${esc(B[j])}]
+        </span> `;
+
+      j++;
+
+    }
+
+  }
+
+
+  const result =
+    document
+      .getElementById(
+        "result"
+      );
+
+
+  result
+    .classList
+    .remove("hidden");
+
+
+  result.innerHTML = `
+
+    <h3>
+      ${
+        score === 100
+        ?
+        "✅ Perfect!"
+        :
+        "Score: " + score + "%"
+      }
+    </h3>
+
+    <p>
+      <b>Reference:</b>
+      ${esc(current.ref)}
+    </p>
+
+    <p>
+      <b>Your answer comparison:</b>
+    </p>
+
+    <div id="comparison">
+      ${html}
+    </div>
+
+    <div class="legend">
+
+      <span class="correct">
+        Correct
+      </span>
+
+      <span class="wrong">
+        Wrong/extra
+      </span>
+
+      <span class="missing">
+        Missing/correct word
+      </span>
+
+    </div>
+
+    <hr>
+
+    <p>
+      <b>Exact stored text:</b>
+      <br>
+      ${esc(current.text)}
+    </p>
+
+  `;
+
+}
+
+
+/* =====================================================
+   PROGRESS
+===================================================== */
+
+function refreshProgress(){
+
+  const vals =
+    Object.values(
+      db.stats
+    );
+
+
+  const total =
+    db.verses.length;
+
+
+  const attempts =
+    vals.reduce(
+      (a,x)=>
+        a + x.attempts,
+      0
+    );
+
+
+  const points =
+    vals.reduce(
+      (a,x)=>
+        a + x.total,
+      0
+    );
+
+
+  const perfect =
+    vals.reduce(
+      (a,x)=>
+        a + x.perfect,
+      0
+    );
+
+
+  document
+    .getElementById("total")
+    .textContent = total;
+
+
+  document
+    .getElementById("attempts")
+    .textContent = attempts;
+
+
+  document
+    .getElementById("avg")
+    .textContent =
+      attempts
+      ?
+      Math.round(
+        points / attempts
+      ) + "%"
+      :
+      "0%";
+
+
+  document
+    .getElementById("perfect")
+    .textContent =
+      perfect;
+
+
+  const sets = {};
+
+
+  db.verses.forEach(
+    v =>
+      (
+        sets[v.set] ??= []
+      ).push(v)
+  );
+
+
+  document
+    .getElementById("setList")
+    .innerHTML =
+
+      Object
+        .entries(sets)
+        .map(
+          ([set,vs]) =>
+
+            `<div class="panel">
+
+              <b>
+                ${esc(set)}
+              </b>
+
+              —
+              ${vs.length}
+              verse(s)
+
+            </div>`
+
+        )
+        .join("");
+
+}
+
+
+/* =====================================================
+   LIBRARY
+===================================================== */
+
+function refreshLibrary(){
+
+  const search =
+    (
+      document
+        .getElementById(
+          "librarySearch"
+        )
+        ?.value || ""
+    )
+    .toLowerCase();
+
+
+  const filter =
+    document
+      .getElementById(
+        "librarySet"
+      )
+      ?.value || "";
+
+
+  const sets =
+    [
+      ...new Set(
+        db.verses.map(
+          v => v.set
+        )
+      )
+    ]
+    .sort();
+
+
+  const sel =
+    document
+      .getElementById(
+        "librarySet"
+      );
+
+
+  if(sel){
+
+    const old =
+      sel.value;
+
+
+    sel.innerHTML =
+      '<option value="">All sets</option>' +
+
+      sets
+        .map(
+          s =>
+            `<option value="${esc(s)}">
+              ${esc(s)}
+            </option>`
+        )
+        .join("");
+
+
+    if(
+      sets.includes(old)
+    ){
+
+      sel.value = old;
+
+    }
+
+  }
+
+
+  const list =
+    db.verses.filter(
+      v => {
+
+        const matchesSearch =
+          !search ||
+
+          (
+            v.ref +
+            " " +
+            v.text +
+            " " +
+            v.set
+          )
+          .toLowerCase()
+          .includes(search);
+
+
+        const matchesSet =
+          !filter ||
+          v.set === filter;
+
+
+        return (
+          matchesSearch &&
+          matchesSet
+        );
+
+      }
+    );
+
+
+  const tree = {};
+
+
+  list.forEach(
+    v => {
+
+      tree[v.set] ??= {};
+
+      const ch =
+        chapterOf(v.ref);
+
+
+      tree[v.set][ch] ??= [];
+
+      tree[v.set][ch].push(v);
+
+    }
+  );
+
+
+  document
+    .getElementById(
+      "libraryTree"
+    )
+    .innerHTML =
+
+      Object
+        .entries(tree)
+        .map(
+          ([set,chapters]) =>
+
+            `<div class="libraryItem">
+
+              <div class="meta">
+                📖 ${esc(set)}
+              </div>
+
+              ${
+                Object
+                  .entries(chapters)
+                  .sort(
+                    (a,b)=>{
+
+                      if(
+                        a[0] === "Other"
+                      )
+                        return 1;
+
+                      if(
+                        b[0] === "Other"
+                      )
+                        return -1;
+
+                      return (
+                        Number(a[0]) -
+                        Number(b[0])
+                      );
+
+                    }
+                  )
+                  .map(
+                    ([ch,vs]) =>
+
+                      `<div style="
+                        margin:
+                        8px 0
+                        8px 12px
+                      ">
+
+                        <b>
+                          Chapter
+                          ${esc(ch)}
+                        </b>
+
+                        —
+                        ${vs.length}
+                        verse(s)
+
+                      </div>`
+                  )
+                  .join("")
+              }
+
+            </div>`
+
+        )
+        .join("")
+
+      ||
+
+      '<p class="small">No matching chapters.</p>';
+
+
+  document
+    .getElementById(
+      "libraryList"
+    )
+    .innerHTML =
+
+      list.length
+
+      ?
+
+      list
+        .map(
+          v =>
+            libraryCard(v)
+        )
+        .join("")
+
+      :
+
+      '<p class="small">No verses found.</p>';
+
+}
+
+
+/* =====================================================
+   LIBRARY CARD
+===================================================== */
+
+function libraryCard(v){
+
+  const editing =
+    editingId === v.id;
+
+
+  if(editing){
+
+    return `
+
+      <div class="libraryItem">
+
+        <div class="meta">
+
+          ${esc(v.ref)}
+
+          <span class="small">
+            (${esc(v.set)})
+          </span>
+
+        </div>
+
+
+        <div class="editBox">
+
+          <label>
+            Reference
+          </label>
+
+          <input
+            id="editRef-${esc(v.id)}"
+            value="${esc(v.ref)}"
+          >
+
+
+          <br><br>
+
+
+          <label>
+            Set
+          </label>
+
+          <input
+            id="editSet-${esc(v.id)}"
+            value="${esc(v.set)}"
+          >
+
+
+          <br><br>
+
+
+          <label>
+            Verse text
+          </label>
+
+          <textarea
+            id="editText-${esc(v.id)}"
+          >${esc(v.text)}</textarea>
+
+
+          <br><br>
+
+
+          <button
+            onclick="saveEditedVerse('${esc(v.id)}')"
+          >
+            💾 Save Changes
+          </button>
+
+
+          <button
+            class="secondary"
+            onclick="cancelEdit()"
+          >
+            Cancel
+          </button>
+
+        </div>
+
+      </div>
+
+    `;
+
+  }
+
+
+  return `
+
+    <div class="libraryItem">
+
+      <div class="meta">
+
+        ${esc(v.ref)}
+
+        <span class="small">
+          (${esc(v.set)})
+        </span>
+
+      </div>
+
+
+      <div class="libraryText">
+        ${esc(v.text)}
+      </div>
+
+
+      <button
+        onclick="startEdit('${esc(v.id)}')"
+      >
+        ✏️ Edit
+      </button>
+
+
+      <button
+        class="danger"
+        onclick="deleteVerse('${esc(v.id)}')"
+      >
+        🗑 Delete
+      </button>
+
+    </div>
+
+  `;
+
+}
+
+
+/* =====================================================
+   EDIT
+===================================================== */
+
+function startEdit(id){
+
+  editingId = id;
+
+  refreshLibrary();
+
+}
+
+
+function cancelEdit(){
+
+  editingId = null;
+
+  refreshLibrary();
+
+}
+
+
+/* =====================================================
+   SAVE EDITED VERSE
+===================================================== */
+
+async function saveEditedVerse(id){
+
+  const v =
+    db.verses.find(
+      x =>
+        String(x.id)
+        ===
+        String(id)
+    );
+
+
+  if(!v)return;
+
+
+  const ref =
+    document
+      .getElementById(
+        "editRef-" + id
+      )
+      .value
+      .trim();
+
+
+  const set =
+    document
+      .getElementById(
+        "editSet-" + id
+      )
+      .value
+      .trim()
+    ||
+    "My Verses";
+
+
+  const text =
+    document
+      .getElementById(
+        "editText-" + id
+      )
+      .value
+      .trim();
+
+
+  if(!ref || !text){
+
+    return alert(
+      "Reference and verse text cannot be empty."
+    );
+
+  }
+
+
+  const duplicate =
+    db.verses.find(
+      x =>
+        x.id !== v.id &&
+        x.ref.toLowerCase()
+        ===
+        ref.toLowerCase()
+    );
+
+
+  if(duplicate){
+
+    return alert(
+      "Another verse already uses this reference."
+    );
+
+  }
+
+
+  v.ref = ref;
+  v.set = set;
+  v.text = text;
+
+
+  await saveVerse(v);
+
+
+  if(
+    current &&
+    current.id === v.id
+  ){
+
+    current = v;
+
+  }
+
+
+  editingId = null;
+
+
+  refreshQuiz();
+  refreshLibrary();
+  refreshProgress();
+
+
+  alert(
+    "Verse updated permanently."
+  );
+
+}
+
+
+/* =====================================================
+   DELETE
+===================================================== */
+
+async function deleteVerse(id){
+
+  const v =
+    db.verses.find(
+      x =>
+        String(x.id)
+        ===
+        String(id)
+    );
+
+
+  if(!v)return;
+
+
+  if(
+    !confirm(
+      "Delete " +
+      v.ref +
+      " permanently?"
+    )
+  )
+    return;
+
+
+  await idbDelete(
+    STORE,
+    v.id
+  );
+
+
+  if(db.stats[v.id]){
+
+    await idbDelete(
+      STATS,
+      v.id
+    );
+
+
+    delete db.stats[v.id];
+
+  }
+
+
+  db.verses =
+    db.verses.filter(
+      x =>
+        x.id !== v.id
+    );
+
+
+  if(
+    current &&
+    current.id === v.id
+  ){
+
+    current = null;
+
+  }
+
+
+  refreshQuiz();
+  refreshLibrary();
+  refreshProgress();
+
+}
+
+
+/* =====================================================
+   ESCAPE HTML
+===================================================== */
+
+function esc(s){
+
+  return String(s)
+    .replace(
+      /[&<>"']/g,
+      c =>
+        ({
+          "&":"&amp;",
+          "<":"&lt;",
+          ">":"&gt;",
+          '"':"&quot;",
+          "'":"&#39;"
+        }[c])
+    );
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
+
+openDB()
+
+.then(()=>{
+
+  refreshQuiz();
+
+  refreshLibrary();
+
+  refreshProgress();
+
+})
+
+.catch(err=>{
+
   console.error(err);
-  alert('Could not open the permanent verse database. Please use a modern browser.');
+
+  alert(
+    "Could not open the permanent verse database. " +
+    "Please use a modern browser."
+  );
+
 });
+
 </script>
+
 </body>
 </html>
