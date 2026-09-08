@@ -1,0 +1,666 @@
+{
+  "sets": [
+    {
+      "id": "mtsq8wbp5ikvzn",
+      "name": "Romans 6",
+      "description": "",
+      "created": 1788875435941
+    },
+    {
+      "id": "mtsqak824k1e13",
+      "name": "Philippians 4",
+      "description": "",
+      "created": 1788875513570
+    },
+    {
+      "id": "mtsqvkg1rmbmbg",
+      "name": "Colossians 3",
+      "description": "",
+      "created": 1788876493633
+    }
+  ],
+  "verses": [
+    {
+      "id": "mtsq9vi0gnlg0c",
+      "setId": "mtsq8wbp5ikvzn",
+      "book": "Romans",
+      "chapter": 6,
+      "verse": 1,
+      "text": "What shall we say then? Shall we continue in sin that grace may abound?",
+      "created": 1788875481528
+    },
+    {
+      "id": "mtsq9vi0n9qoyw",
+      "setId": "mtsq8wbp5ikvzn",
+      "book": "Romans",
+      "chapter": 6,
+      "verse": 2,
+      "text": "Certainly not! How shall we who died to sin live any longer in it?",
+      "created": 1788875481528
+    },
+    {
+      "id": "mtsq9vi002pf4r",
+      "setId": "mtsq8wbp5ikvzn",
+      "book": "Romans",
+      "chapter": 6,
+      "verse": 3,
+      "text": "Or do you not know that as many of us as were baptized into Christ Jesus were baptized into His death?",
+      "created": 1788875481528
+    },
+    {
+      "id": "mtsq9vi090imff",
+      "setId": "mtsq8wbp5ikvzn",
+      "book": "Romans",
+      "chapter": 6,
+      "verse": 4,
+      "text": "Therefore we were buried with Him through baptism into death, that just as Christ was raised from the dead by the glory of the Father, even so we also should walk in newness of life.",
+      "created": 1788875481528
+    },
+    {
+      "id": "mtsq9vi0d32zy1",
+      "setId": "mtsq8wbp5ikvzn",
+      "book": "Romans",
+      "chapter": 6,
+      "verse": 5,
+      "text": "For if we have been united together in the likeness of His death, certainly we also shall be in the likeness of His resurrection,",
+      "created": 1788875481528
+    },
+    {
+      "id": "mtsq9vi0i21dp6",
+      "setId": "mtsq8wbp5ikvzn",
+      "book": "Romans",
+      "chapter": 6,
+      "verse": 6,
+      "text": "knowing this, that our old man was crucified with Him, that the body of sin might be done away with, that we should no longer be slaves of sin.",
+      "created": 1788875481528
+    },
+    {
+      "id": "mtsq9vi0dwvazc",
+      "setId": "mtsq8wbp5ikvzn",
+      "book": "Romans",
+      "chapter": 6,
+      "verse": 7,
+      "text": "For he who has died has been freed from sin.",
+      "created": 1788875481528
+    },
+    {
+      "id": "mtsq9vi0j68v47",
+      "setId": "mtsq8wbp5ikvzn",
+      "book": "Romans",
+      "chapter": 6,
+      "verse": 8,
+      "text": "Now if we died with Christ, we believe that we shall also live with Him,",
+      "created": 1788875481528
+    },
+    {
+      "id": "mtsq9vi0wr8kcx",
+      "setId": "mtsq8wbp5ikvzn",
+      "book": "Romans",
+      "chapter": 6,
+      "verse": 9,
+      "text": "knowing that Christ, having been raised from the dead, dies no more. Death no longer has dominion over Him.",
+      "created": 1788875481528
+    },
+    {
+      "id": "mtsq9vi049qxti",
+      "setId": "mtsq8wbp5ikvzn",
+      "book": "Romans",
+      "chapter": 6,
+      "verse": 10,
+      "text": "For the death that He died, He died to sin once for all; but the life that He lives, He lives to God.",
+      "created": 1788875481528
+    },
+    {
+      "id": "mtsq9vi0dfy189",
+      "setId": "mtsq8wbp5ikvzn",
+      "book": "Romans",
+      "chapter": 6,
+      "verse": 11,
+      "text": "Likewise you also, reckon yourselves to be dead indeed to sin, but alive to God in Christ Jesus our Lord.",
+      "created": 1788875481528
+    },
+    {
+      "id": "mtsq9vi0lhf5ex",
+      "setId": "mtsq8wbp5ikvzn",
+      "book": "Romans",
+      "chapter": 6,
+      "verse": 12,
+      "text": "Therefore do not let sin reign in your mortal body, that you should obey it in its lusts.",
+      "created": 1788875481528
+    },
+    {
+      "id": "mtsq9vi0bhlbsa",
+      "setId": "mtsq8wbp5ikvzn",
+      "book": "Romans",
+      "chapter": 6,
+      "verse": 13,
+      "text": "And do not present your members as instruments of unrighteousness to sin, but present yourselves to God as being alive from the dead, and your members as instruments of righteousness to God.",
+      "created": 1788875481528
+    },
+    {
+      "id": "mtsq9vi04qbwye",
+      "setId": "mtsq8wbp5ikvzn",
+      "book": "Romans",
+      "chapter": 6,
+      "verse": 14,
+      "text": "For sin shall not have dominion over you, for you are not under law but under grace.",
+      "created": 1788875481528
+    },
+    {
+      "id": "mtsq9vi0xxofbc",
+      "setId": "mtsq8wbp5ikvzn",
+      "book": "Romans",
+      "chapter": 6,
+      "verse": 15,
+      "text": "What then? Shall we sin because we are not under law but under grace? Certainly not!",
+      "created": 1788875481528
+    },
+    {
+      "id": "mtsq9vi0pafiyv",
+      "setId": "mtsq8wbp5ikvzn",
+      "book": "Romans",
+      "chapter": 6,
+      "verse": 16,
+      "text": "Do you not know that to whom you present yourselves slaves to obey, you are that one’s slaves whom you obey, whether of sin leading to death, or of obedience leading to righteousness?",
+      "created": 1788875481528
+    },
+    {
+      "id": "mtsq9vi00wb4mv",
+      "setId": "mtsq8wbp5ikvzn",
+      "book": "Romans",
+      "chapter": 6,
+      "verse": 17,
+      "text": "But God be thanked that though you were slaves of sin, yet you obeyed from the heart that form of doctrine to which you were delivered.",
+      "created": 1788875481528,
+      "updated": 1788875928753
+    },
+    {
+      "id": "mtsq9vi0ixljpl",
+      "setId": "mtsq8wbp5ikvzn",
+      "book": "Romans",
+      "chapter": 6,
+      "verse": 18,
+      "text": "And having been set free from sin, you became slaves of righteousness.",
+      "created": 1788875481528
+    },
+    {
+      "id": "mtsq9vi0jixqpw",
+      "setId": "mtsq8wbp5ikvzn",
+      "book": "Romans",
+      "chapter": 6,
+      "verse": 19,
+      "text": "I speak in human terms because of the weakness of your flesh. For just as you presented your members as slaves of uncleanness, and of lawlessness leading to more lawlessness, so now present your members as slaves of righteousness for holiness.",
+      "created": 1788875481528
+    },
+    {
+      "id": "mtsq9vi03rbxvz",
+      "setId": "mtsq8wbp5ikvzn",
+      "book": "Romans",
+      "chapter": 6,
+      "verse": 20,
+      "text": "For when you were slaves of sin, you were free in regard to righteousness.",
+      "created": 1788875481528
+    },
+    {
+      "id": "mtsq9vi0m134ty",
+      "setId": "mtsq8wbp5ikvzn",
+      "book": "Romans",
+      "chapter": 6,
+      "verse": 21,
+      "text": "What fruit did you have then in the things of which you are now ashamed? For the end of those things is death.",
+      "created": 1788875481528
+    },
+    {
+      "id": "mtsq9vi0xr0qv6",
+      "setId": "mtsq8wbp5ikvzn",
+      "book": "Romans",
+      "chapter": 6,
+      "verse": 22,
+      "text": "But now having been set free from sin, and having become slaves of God, you have your fruit to holiness, and the end, everlasting life.",
+      "created": 1788875481528
+    },
+    {
+      "id": "mtsq9vi06drfi2",
+      "setId": "mtsq8wbp5ikvzn",
+      "book": "Romans",
+      "chapter": 6,
+      "verse": 23,
+      "text": "For the wages of sin is death, but the gift of God is eternal life in Christ Jesus our Lord.",
+      "created": 1788875481528
+    },
+    {
+      "id": "mtsqba184lrufq",
+      "setId": "mtsqak824k1e13",
+      "book": "Philippians",
+      "chapter": 4,
+      "verse": 1,
+      "text": "Therefore, my beloved and longed-for brethren, my joy and crown, so stand fast in the Lord, beloved.",
+      "created": 1788875547020
+    },
+    {
+      "id": "mtsqba18r2nimr",
+      "setId": "mtsqak824k1e13",
+      "book": "Philippians",
+      "chapter": 4,
+      "verse": 2,
+      "text": "I implore Euodia and I implore Syntyche to be of the same mind in the Lord.",
+      "created": 1788875547020
+    },
+    {
+      "id": "mtsqba18iwfc0f",
+      "setId": "mtsqak824k1e13",
+      "book": "Philippians",
+      "chapter": 4,
+      "verse": 3,
+      "text": "And I urge you also, true companion, help these women who labored with me in the gospel, with Clement also, and the rest of my fellow workers, whose names are in the Book of Life.",
+      "created": 1788875547020
+    },
+    {
+      "id": "mtsqba180dx2ja",
+      "setId": "mtsqak824k1e13",
+      "book": "Philippians",
+      "chapter": 4,
+      "verse": 4,
+      "text": "Rejoice in the Lord always. Again I will say, rejoice!",
+      "created": 1788875547020
+    },
+    {
+      "id": "mtsqba18jto7o3",
+      "setId": "mtsqak824k1e13",
+      "book": "Philippians",
+      "chapter": 4,
+      "verse": 5,
+      "text": "Let your gentleness be made known to all men. The Lord is at hand.",
+      "created": 1788875547020
+    },
+    {
+      "id": "mtsqba18pwv3td",
+      "setId": "mtsqak824k1e13",
+      "book": "Philippians",
+      "chapter": 4,
+      "verse": 6,
+      "text": "Be anxious for nothing, but in everything by prayer and supplication, with thanksgiving, let your requests be made known to God;",
+      "created": 1788875547020
+    },
+    {
+      "id": "mtsqba18hr8zbm",
+      "setId": "mtsqak824k1e13",
+      "book": "Philippians",
+      "chapter": 4,
+      "verse": 7,
+      "text": "and the peace of God, which surpasses all understanding, will guard your hearts and minds through Christ Jesus.",
+      "created": 1788875547020
+    },
+    {
+      "id": "mtsqba18nzltch",
+      "setId": "mtsqak824k1e13",
+      "book": "Philippians",
+      "chapter": 4,
+      "verse": 8,
+      "text": "Finally, brethren, whatever things are true, whatever things are noble, whatever things are just, whatever things are pure, whatever things are lovely, whatever things are of good report, if there is any virtue and if there is anything praiseworthy – meditate on these things.",
+      "created": 1788875547020
+    },
+    {
+      "id": "mtsqba18qqdmir",
+      "setId": "mtsqak824k1e13",
+      "book": "Philippians",
+      "chapter": 4,
+      "verse": 9,
+      "text": "The things you learned and received and heard and saw in me, these do, and the God of peace will be with you.",
+      "created": 1788875547020
+    },
+    {
+      "id": "mtsqba18m5rtuc",
+      "setId": "mtsqak824k1e13",
+      "book": "Philippians",
+      "chapter": 4,
+      "verse": 10,
+      "text": "But I rejoiced in the Lord greatly that now at last your care for me has flourished again; though you surely did care, but you lacked opportunity.",
+      "created": 1788875547020
+    },
+    {
+      "id": "mtsqba18peo1ei",
+      "setId": "mtsqak824k1e13",
+      "book": "Philippians",
+      "chapter": 4,
+      "verse": 11,
+      "text": "Not that I speak in regard to need, for I have learned in whatever state I am, to be content:",
+      "created": 1788875547020
+    },
+    {
+      "id": "mtsqba18o1f9nd",
+      "setId": "mtsqak824k1e13",
+      "book": "Philippians",
+      "chapter": 4,
+      "verse": 12,
+      "text": "I know how to be abased, and I know how to abound. Everywhere and in all things I have learned both to be full and to be hungry, both to abound and to suffer need.",
+      "created": 1788875547020
+    },
+    {
+      "id": "mtsqba18yrh4ct",
+      "setId": "mtsqak824k1e13",
+      "book": "Philippians",
+      "chapter": 4,
+      "verse": 13,
+      "text": "I can do all things through Christ who strengthens me.",
+      "created": 1788875547020
+    },
+    {
+      "id": "mtsqba18fsfz0l",
+      "setId": "mtsqak824k1e13",
+      "book": "Philippians",
+      "chapter": 4,
+      "verse": 14,
+      "text": "Nevertheless you have done well that you shared in my distress.",
+      "created": 1788875547020
+    },
+    {
+      "id": "mtsqba18nxt2bk",
+      "setId": "mtsqak824k1e13",
+      "book": "Philippians",
+      "chapter": 4,
+      "verse": 15,
+      "text": "Now you Philippians know also that in the beginning of the gospel, when I departed from Macedonia, no church shared with me concerning giving and receiving but you only.",
+      "created": 1788875547020
+    },
+    {
+      "id": "mtsqba18t1cs4k",
+      "setId": "mtsqak824k1e13",
+      "book": "Philippians",
+      "chapter": 4,
+      "verse": 16,
+      "text": "For even in Thessalonica you sent aid once and again for my necessities.",
+      "created": 1788875547020
+    },
+    {
+      "id": "mtsqba185z5i8a",
+      "setId": "mtsqak824k1e13",
+      "book": "Philippians",
+      "chapter": 4,
+      "verse": 17,
+      "text": "Not that I seek the gift, but I seek the fruit that abounds to your account.",
+      "created": 1788875547020
+    },
+    {
+      "id": "mtsqba18zrhpmw",
+      "setId": "mtsqak824k1e13",
+      "book": "Philippians",
+      "chapter": 4,
+      "verse": 18,
+      "text": "Indeed I have all and abound. I am full, having received from Epaphroditus the things sent from you, a sweet-smelling aroma, an acceptable sacrifice, well pleasing to God.",
+      "created": 1788875547020
+    },
+    {
+      "id": "mtsqba1859s57m",
+      "setId": "mtsqak824k1e13",
+      "book": "Philippians",
+      "chapter": 4,
+      "verse": 19,
+      "text": "And my God shall supply all your need according to His riches in glory by Christ Jesus.",
+      "created": 1788875547020
+    },
+    {
+      "id": "mtsqba18jdthia",
+      "setId": "mtsqak824k1e13",
+      "book": "Philippians",
+      "chapter": 4,
+      "verse": 20,
+      "text": "Now to our God and Father be glory forever and ever. Amen.",
+      "created": 1788875547020
+    },
+    {
+      "id": "mtsqba18e5eyu9",
+      "setId": "mtsqak824k1e13",
+      "book": "Philippians",
+      "chapter": 4,
+      "verse": 21,
+      "text": "Greet every saint in Christ Jesus. The brethren who are with me greet you.",
+      "created": 1788875547020
+    },
+    {
+      "id": "mtsqba18s516uj",
+      "setId": "mtsqak824k1e13",
+      "book": "Philippians",
+      "chapter": 4,
+      "verse": 22,
+      "text": "All the saints greet you, but especially those who are of Caesar’s household.",
+      "created": 1788875547020
+    },
+    {
+      "id": "mtsqba18gf9ajv",
+      "setId": "mtsqak824k1e13",
+      "book": "Philippians",
+      "chapter": 4,
+      "verse": 23,
+      "text": "The grace of our Lord Jesus Christ be with you all. Amen.",
+      "created": 1788875547020
+    },
+    {
+      "id": "mtsqvwoof8ufur",
+      "setId": "mtsqvkg1rmbmbg",
+      "book": "Colossians",
+      "chapter": 3,
+      "verse": 1,
+      "text": "If then you were raised with Christ, seek those things which are above, where Christ is, sitting at the right hand of God.",
+      "created": 1788876509496
+    },
+    {
+      "id": "mtsqvwooyqmokf",
+      "setId": "mtsqvkg1rmbmbg",
+      "book": "Colossians",
+      "chapter": 3,
+      "verse": 2,
+      "text": "Set your mind on things above, not on things on the earth.",
+      "created": 1788876509496
+    },
+    {
+      "id": "mtsqvwoos3azaw",
+      "setId": "mtsqvkg1rmbmbg",
+      "book": "Colossians",
+      "chapter": 3,
+      "verse": 3,
+      "text": "For you died, and your life in hidden with Christ in God.",
+      "created": 1788876509496
+    },
+    {
+      "id": "mtsqvwoodvqfa0",
+      "setId": "mtsqvkg1rmbmbg",
+      "book": "Colossians",
+      "chapter": 3,
+      "verse": 4,
+      "text": "When Christ who is our life appears, then you also will appear with Him in glory.",
+      "created": 1788876509496
+    },
+    {
+      "id": "mtsqvwoouuhjn7",
+      "setId": "mtsqvkg1rmbmbg",
+      "book": "Colossians",
+      "chapter": 3,
+      "verse": 5,
+      "text": "Therefore put to death your members which are on the earth: fornication, uncleanness, passion, evil desire, and covetousness, which is idolatry.",
+      "created": 1788876509496
+    },
+    {
+      "id": "mtsqvwooheof8o",
+      "setId": "mtsqvkg1rmbmbg",
+      "book": "Colossians",
+      "chapter": 3,
+      "verse": 6,
+      "text": "Because of these things the wrath of God is coming upon the sons of disobedience,",
+      "created": 1788876509496
+    },
+    {
+      "id": "mtsqvwookfoeih",
+      "setId": "mtsqvkg1rmbmbg",
+      "book": "Colossians",
+      "chapter": 3,
+      "verse": 7,
+      "text": "in which you yourselves once walked when you lived in them.",
+      "created": 1788876509496
+    },
+    {
+      "id": "mtsqvwoo22m03y",
+      "setId": "mtsqvkg1rmbmbg",
+      "book": "Colossians",
+      "chapter": 3,
+      "verse": 8,
+      "text": "But now you yourselves are to put off all these: anger, wrath, malice, blasphemy, filthy language out of your mouth.",
+      "created": 1788876509496
+    },
+    {
+      "id": "mtsqvwoo93200m",
+      "setId": "mtsqvkg1rmbmbg",
+      "book": "Colossians",
+      "chapter": 3,
+      "verse": 9,
+      "text": "Do not lie to one another, since you have put off the old man with his deeds,",
+      "created": 1788876509496
+    },
+    {
+      "id": "mtsqvwooggps1o",
+      "setId": "mtsqvkg1rmbmbg",
+      "book": "Colossians",
+      "chapter": 3,
+      "verse": 10,
+      "text": "and have put on the new man who is renewed in knowledge according to the image of Him who created him,",
+      "created": 1788876509496
+    },
+    {
+      "id": "mtsqvwooyjd4cz",
+      "setId": "mtsqvkg1rmbmbg",
+      "book": "Colossians",
+      "chapter": 3,
+      "verse": 11,
+      "text": "where there is neither Greek nor Jew, circumcised nor uncircumcised, barbarian, Scythian, slave nor free, but Christ is all and in all.",
+      "created": 1788876509496
+    },
+    {
+      "id": "mtsqvwooufsm5c",
+      "setId": "mtsqvkg1rmbmbg",
+      "book": "Colossians",
+      "chapter": 3,
+      "verse": 12,
+      "text": "Therefore, as the elect of God, holy and beloved, put on tender mercies, kindness, humility, meekness, longsuffering;",
+      "created": 1788876509496
+    },
+    {
+      "id": "mtsqvwoodw6pqn",
+      "setId": "mtsqvkg1rmbmbg",
+      "book": "Colossians",
+      "chapter": 3,
+      "verse": 13,
+      "text": "bearing with one another, and forgiving one another, if anyone has a complaint against another; even as Christ forgave you, so you also must do.",
+      "created": 1788876509496
+    },
+    {
+      "id": "mtsqvwoomzqd2q",
+      "setId": "mtsqvkg1rmbmbg",
+      "book": "Colossians",
+      "chapter": 3,
+      "verse": 14,
+      "text": "But above all these things put on love, which is the bond of perfection.",
+      "created": 1788876509496
+    },
+    {
+      "id": "mtsqvwoo9qylpk",
+      "setId": "mtsqvkg1rmbmbg",
+      "book": "Colossians",
+      "chapter": 3,
+      "verse": 15,
+      "text": "And let the peace of God rule in your hearts, to which also you were called in one body; and be thankful.",
+      "created": 1788876509496
+    },
+    {
+      "id": "mtsqvwooevwm9i",
+      "setId": "mtsqvkg1rmbmbg",
+      "book": "Colossians",
+      "chapter": 3,
+      "verse": 16,
+      "text": "Let the word of Christ dwell in you richly in all wisdom, teaching and admonishing one another in psalms and hymns and spiritual songs, singing with grace in your hearts to the Lord.",
+      "created": 1788876509496
+    },
+    {
+      "id": "mtsqvwoon9ep35",
+      "setId": "mtsqvkg1rmbmbg",
+      "book": "Colossians",
+      "chapter": 3,
+      "verse": 17,
+      "text": "And whatever you do in word or deed, do all in the name of the Lord Jesus, giving thanks to God the Father through Him.",
+      "created": 1788876509496
+    },
+    {
+      "id": "mtsqvwoovhxlog",
+      "setId": "mtsqvkg1rmbmbg",
+      "book": "Colossians",
+      "chapter": 3,
+      "verse": 18,
+      "text": "Wives, submit to your own husbands, as is fitting in the Lord.",
+      "created": 1788876509496
+    },
+    {
+      "id": "mtsqvwoocw7ha9",
+      "setId": "mtsqvkg1rmbmbg",
+      "book": "Colossians",
+      "chapter": 3,
+      "verse": 19,
+      "text": "Husbands, love your wives and do not be bitter toward them.",
+      "created": 1788876509496
+    },
+    {
+      "id": "mtsqvwoocmvvm7",
+      "setId": "mtsqvkg1rmbmbg",
+      "book": "Colossians",
+      "chapter": 3,
+      "verse": 20,
+      "text": "Children, obey your parents in all things, for this is well pleasing to the Lord.",
+      "created": 1788876509496
+    },
+    {
+      "id": "mtsqvwoot389bk",
+      "setId": "mtsqvkg1rmbmbg",
+      "book": "Colossians",
+      "chapter": 3,
+      "verse": 21,
+      "text": "Fathers, do not provoke your children, lest they become discouraged.",
+      "created": 1788876509496
+    },
+    {
+      "id": "mtsqvwooulf5b9",
+      "setId": "mtsqvkg1rmbmbg",
+      "book": "Colossians",
+      "chapter": 3,
+      "verse": 22,
+      "text": "Bondservants, obey in all things your masters according to the flesh, not with eyeservice, as men-pleasers, but in sincerity of heart, fearing God.",
+      "created": 1788876509496
+    },
+    {
+      "id": "mtsqvwoobmaxoy",
+      "setId": "mtsqvkg1rmbmbg",
+      "book": "Colossians",
+      "chapter": 3,
+      "verse": 23,
+      "text": "And whatever you do, do it heartily, as to the Lord and not to men,",
+      "created": 1788876509496
+    },
+    {
+      "id": "mtsqvwooof7k33",
+      "setId": "mtsqvkg1rmbmbg",
+      "book": "Colossians",
+      "chapter": 3,
+      "verse": 24,
+      "text": "knowing that from the Lord you will receive the reward of the inheritance; for you serve the Lord Christ.",
+      "created": 1788876509496
+    },
+    {
+      "id": "mtsqvwool77iq2",
+      "setId": "mtsqvkg1rmbmbg",
+      "book": "Colossians",
+      "chapter": 3,
+      "verse": 25,
+      "text": "But he who does wrong will be repaid for what he has done, and there is no partiality.",
+      "created": 1788876509496
+    }
+  ],
+  "attempts": 16,
+  "created": 1788875345222
+}
