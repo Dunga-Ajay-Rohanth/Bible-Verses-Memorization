@@ -23,6 +23,12 @@
       "name": "1 John 2",
       "description": "",
       "created": 1789034890006
+    },
+    {
+      "id": "mtzrwxkpari2na",
+      "name": "Psalm 147",
+      "description": "",
+      "created": 1789301500154
     }
   ],
   "verses": [
@@ -312,8 +318,9 @@
       "book": "Philippians",
       "chapter": 4,
       "verse": 9,
-      "text": "The things you learned and received and heard and saw in me, these do, and the God of peace will be with you.",
-      "created": 1788875547020
+      "text": "The things which you learned and received and heard and saw in me, these do, and the God of peace will be with you.",
+      "created": 1788875547020,
+      "updated": 1789054991242
     },
     {
       "id": "mtsqba18m5rtuc",
@@ -465,8 +472,9 @@
       "book": "Colossians",
       "chapter": 3,
       "verse": 3,
-      "text": "For you died, and your life in hidden with Christ in God.",
-      "created": 1788876509496
+      "text": "For you died, and your life is hidden with Christ in God.",
+      "created": 1788876509496,
+      "updated": 1789055588235
     },
     {
       "id": "mtsqvwoodvqfa0",
@@ -926,8 +934,188 @@
       "verse": 29,
       "text": "If you know that He is righteous, you know that everyone who practices righteousness is born of Him.",
       "created": 1789034914806
+    },
+    {
+      "id": "mtzrxgy11unov1",
+      "setId": "mtzrwxkpari2na",
+      "book": "Psalm",
+      "chapter": 147,
+      "verse": 1,
+      "text": "Praise the Lord! For it is good to sing praises to our God; for it is pleasant, and praise is beautiful.",
+      "created": 1789301525257
+    },
+    {
+      "id": "mtzrxgy1mz0q5h",
+      "setId": "mtzrwxkpari2na",
+      "book": "Psalm",
+      "chapter": 147,
+      "verse": 2,
+      "text": "The Lord builds up Jerusalem; He gathers together the outcasts of Israel.",
+      "created": 1789301525257
+    },
+    {
+      "id": "mtzrxgy1orjnjz",
+      "setId": "mtzrwxkpari2na",
+      "book": "Psalm",
+      "chapter": 147,
+      "verse": 3,
+      "text": "He heals the brokenhearted and binds up their wounds.",
+      "created": 1789301525257
+    },
+    {
+      "id": "mtzrxgy16j23zv",
+      "setId": "mtzrwxkpari2na",
+      "book": "Psalm",
+      "chapter": 147,
+      "verse": 4,
+      "text": "He counts the number of the stars; He calls them all by name.",
+      "created": 1789301525257
+    },
+    {
+      "id": "mtzrxgy17ovdo6",
+      "setId": "mtzrwxkpari2na",
+      "book": "Psalm",
+      "chapter": 147,
+      "verse": 5,
+      "text": "Great is our Lord, and mighty in power; His understanding is infinite.",
+      "created": 1789301525257
+    },
+    {
+      "id": "mtzrxgy12m5z3a",
+      "setId": "mtzrwxkpari2na",
+      "book": "Psalm",
+      "chapter": 147,
+      "verse": 6,
+      "text": "The Lord lifts up the humble; He casts the wicked down to the ground.",
+      "created": 1789301525257
+    },
+    {
+      "id": "mtzrxgy1wt1250",
+      "setId": "mtzrwxkpari2na",
+      "book": "Psalm",
+      "chapter": 147,
+      "verse": 7,
+      "text": "Sing to the Lord with thanksgiving; sing praises on the harp to our God,",
+      "created": 1789301525257
+    },
+    {
+      "id": "mtzrxgy1lqowlh",
+      "setId": "mtzrwxkpari2na",
+      "book": "Psalm",
+      "chapter": 147,
+      "verse": 8,
+      "text": "who covers the heavens with clouds, who prepares rain for the earth, who makes grass to grow on the mountains.",
+      "created": 1789301525257
+    },
+    {
+      "id": "mtzrxgy1o17eca",
+      "setId": "mtzrwxkpari2na",
+      "book": "Psalm",
+      "chapter": 147,
+      "verse": 9,
+      "text": "He gives to the beast its food, and to the young ravens that cry.",
+      "created": 1789301525257
+    },
+    {
+      "id": "mtzrxgy1i8t3wn",
+      "setId": "mtzrwxkpari2na",
+      "book": "Psalm",
+      "chapter": 147,
+      "verse": 10,
+      "text": "He does not delight in the strength of the horse; He takes no pleasure in the legs of a man.",
+      "created": 1789301525257
+    },
+    {
+      "id": "mtzrxgy1lvfslw",
+      "setId": "mtzrwxkpari2na",
+      "book": "Psalm",
+      "chapter": 147,
+      "verse": 11,
+      "text": "The Lord takes pleasure in those who fear Him, in those who hope in His mercy.",
+      "created": 1789301525257
+    },
+    {
+      "id": "mtzrxgy1rbv6uk",
+      "setId": "mtzrwxkpari2na",
+      "book": "Psalm",
+      "chapter": 147,
+      "verse": 12,
+      "text": "Praise the Lord, O Jerusalem! Praise your God, O Zion!",
+      "created": 1789301525257
+    },
+    {
+      "id": "mtzrxgy19ieizi",
+      "setId": "mtzrwxkpari2na",
+      "book": "Psalm",
+      "chapter": 147,
+      "verse": 13,
+      "text": "For He has strengthened the bars of your gates! He has blessed your children within you.",
+      "created": 1789301525257
+    },
+    {
+      "id": "mtzrxgy10v5ohj",
+      "setId": "mtzrwxkpari2na",
+      "book": "Psalm",
+      "chapter": 147,
+      "verse": 14,
+      "text": "He makes peace in your borders, and fills you with the finest wheat.",
+      "created": 1789301525257
+    },
+    {
+      "id": "mtzrxgy1bfvyc6",
+      "setId": "mtzrwxkpari2na",
+      "book": "Psalm",
+      "chapter": 147,
+      "verse": 15,
+      "text": "He sends out His command to the earth; His word runs very swiftly.",
+      "created": 1789301525257
+    },
+    {
+      "id": "mtzrxgy1y5d83m",
+      "setId": "mtzrwxkpari2na",
+      "book": "Psalm",
+      "chapter": 147,
+      "verse": 16,
+      "text": "He gives snow like wool; He scatters the frost like ashes;",
+      "created": 1789301525257
+    },
+    {
+      "id": "mtzrxgy1d8fnh7",
+      "setId": "mtzrwxkpari2na",
+      "book": "Psalm",
+      "chapter": 147,
+      "verse": 17,
+      "text": "He casts out His hail like morsels; who can stand before His cold?",
+      "created": 1789301525257
+    },
+    {
+      "id": "mtzrxgy1x8k16d",
+      "setId": "mtzrwxkpari2na",
+      "book": "Psalm",
+      "chapter": 147,
+      "verse": 18,
+      "text": "He sends out His word and melts them; He causes His wind to blow, and the waters flow.",
+      "created": 1789301525257
+    },
+    {
+      "id": "mtzrxgy1z8wa46",
+      "setId": "mtzrwxkpari2na",
+      "book": "Psalm",
+      "chapter": 147,
+      "verse": 19,
+      "text": "He declares His word to Jacob, His statutes and His judgments to Israel.",
+      "created": 1789301525257
+    },
+    {
+      "id": "mtzrxgy1qfrqgz",
+      "setId": "mtzrwxkpari2na",
+      "book": "Psalm",
+      "chapter": 147,
+      "verse": 20,
+      "text": "He has not dealt thus with any nation; and as for His judgments, they have not known them. Praise the Lord!",
+      "created": 1789301525257
     }
   ],
-  "attempts": 47,
+  "attempts": 280,
   "created": 1788875345222
 }
