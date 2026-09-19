@@ -29,6 +29,12 @@
       "name": "Psalm 147",
       "description": "",
       "created": 1789301500154
+    },
+    {
+      "id": "mu82zdxum9dorr",
+      "name": "Hebrews 11",
+      "description": "",
+      "created": 1789803819858
     }
   ],
   "verses": [
@@ -1115,8 +1121,368 @@
       "verse": 20,
       "text": "He has not dealt thus with any nation; and as for His judgments, they have not known them. Praise the Lord!",
       "created": 1789301525257
+    },
+    {
+      "id": "mu831qnntw5e5y",
+      "setId": "mu82zdxum9dorr",
+      "book": "Hebrews",
+      "chapter": 11,
+      "verse": 1,
+      "text": "Now faith is the substance of things hoped for, the evidence of things not seen.",
+      "created": 1789803929651
+    },
+    {
+      "id": "mu831qno2wxkpw",
+      "setId": "mu82zdxum9dorr",
+      "book": "Hebrews",
+      "chapter": 11,
+      "verse": 2,
+      "text": "For by it the elders obtained a good testimony.",
+      "created": 1789803929652
+    },
+    {
+      "id": "mu831qnoruk0f9",
+      "setId": "mu82zdxum9dorr",
+      "book": "Hebrews",
+      "chapter": 11,
+      "verse": 3,
+      "text": "By faith we understand that the worlds were framed by the word of God, so that the things which are seen were not made of things which are visible.",
+      "created": 1789803929652
+    },
+    {
+      "id": "mu831qnovcna2p",
+      "setId": "mu82zdxum9dorr",
+      "book": "Hebrews",
+      "chapter": 11,
+      "verse": 4,
+      "text": "By faith Abel offered to God a more excellent sacrifice than Cain, through which he obtained witness that he was righteous, God testifying of his gifts; and through it he being dead still speaks.",
+      "created": 1789803929652
+    },
+    {
+      "id": "mu831qnoaradgl",
+      "setId": "mu82zdxum9dorr",
+      "book": "Hebrews",
+      "chapter": 11,
+      "verse": 5,
+      "text": "By faith Enoch was taken away so that he did not see death, “and was not found, because God had taken him”; for before he was taken he had this testimony, that he pleased God.",
+      "created": 1789803929652
+    },
+    {
+      "id": "mu831qnoxdxfn9",
+      "setId": "mu82zdxum9dorr",
+      "book": "Hebrews",
+      "chapter": 11,
+      "verse": 6,
+      "text": "But without faith it is impossible to please Him, for he who comes to God must believe that He is, and that He is a rewarder of those who diligently seek Him.",
+      "created": 1789803929652
+    },
+    {
+      "id": "mu831qnodhtim7",
+      "setId": "mu82zdxum9dorr",
+      "book": "Hebrews",
+      "chapter": 11,
+      "verse": 7,
+      "text": "By faith Noah, being divinely warned of things not yet seen, moved with godly fear, prepared an ark for the saving of his household, by which he condemned the world and became heir of the righteousness which is according to faith.",
+      "created": 1789803929652
+    },
+    {
+      "id": "mu831qno6jd9w5",
+      "setId": "mu82zdxum9dorr",
+      "book": "Hebrews",
+      "chapter": 11,
+      "verse": 8,
+      "text": "By faith Abraham obeyed when he was called to go out to the place which he would receive as an inheritance. And he went out, not knowing where he was going.",
+      "created": 1789803929652
+    },
+    {
+      "id": "mu831qnoizbx47",
+      "setId": "mu82zdxum9dorr",
+      "book": "Hebrews",
+      "chapter": 11,
+      "verse": 9,
+      "text": "By faith he dwelt in the land of promise as in a foreign country, dwelling in tents with Isaac and Jacob, the heirs with him of the same promise;",
+      "created": 1789803929652
+    },
+    {
+      "id": "mu831qno37p95e",
+      "setId": "mu82zdxum9dorr",
+      "book": "Hebrews",
+      "chapter": 11,
+      "verse": 10,
+      "text": "for he waited for the city which has foundations, whose builder and maker is God.",
+      "created": 1789803929652
+    },
+    {
+      "id": "mu831qno6ebrzt",
+      "setId": "mu82zdxum9dorr",
+      "book": "Hebrews",
+      "chapter": 11,
+      "verse": 11,
+      "text": "By faith Sarah herself also received strength to conceive seed, and she bore a child when she was past the age, because she judged Him faithful who had promised.",
+      "created": 1789803929652
+    },
+    {
+      "id": "mu831qnoaoxjev",
+      "setId": "mu82zdxum9dorr",
+      "book": "Hebrews",
+      "chapter": 11,
+      "verse": 12,
+      "text": "Therefore from one man, and him as good as dead, were born as many as the stars of the sky in multitude – innumerable as the sand which is by the seashore.",
+      "created": 1789803929652
+    },
+    {
+      "id": "mu831qnohmydsz",
+      "setId": "mu82zdxum9dorr",
+      "book": "Hebrews",
+      "chapter": 11,
+      "verse": 13,
+      "text": "These all died in faith, not having received the promises, but having seen them afar off were assured of them, embraced them and confessed that they were strangers and pilgrims on the earth.",
+      "created": 1789803929652
+    },
+    {
+      "id": "mu831qnoftn0mc",
+      "setId": "mu82zdxum9dorr",
+      "book": "Hebrews",
+      "chapter": 11,
+      "verse": 14,
+      "text": "For those who say such things declare plainly that they seek a homeland.",
+      "created": 1789803929652
+    },
+    {
+      "id": "mu831qnokuoajm",
+      "setId": "mu82zdxum9dorr",
+      "book": "Hebrews",
+      "chapter": 11,
+      "verse": 15,
+      "text": "And truly if they had called to mind that country from which they had come out, they would have had opportunity to return.",
+      "created": 1789803929652
+    },
+    {
+      "id": "mu831qnoya01fn",
+      "setId": "mu82zdxum9dorr",
+      "book": "Hebrews",
+      "chapter": 11,
+      "verse": 16,
+      "text": "But now they desire a better, that is, a heavenly country. Therefore God is not ashamed to be called their God, for He has prepared a city for them.",
+      "created": 1789803929652
+    },
+    {
+      "id": "mu831qnoxp7unx",
+      "setId": "mu82zdxum9dorr",
+      "book": "Hebrews",
+      "chapter": 11,
+      "verse": 17,
+      "text": "By faith Abraham, when he was tested, offered up Isaac, and he who had received the promises offered up his only begotten son,",
+      "created": 1789803929652
+    },
+    {
+      "id": "mu831qnokczk8m",
+      "setId": "mu82zdxum9dorr",
+      "book": "Hebrews",
+      "chapter": 11,
+      "verse": 18,
+      "text": "of whom it was said, “In Isaac your seed shall be called,“",
+      "created": 1789803929652
+    },
+    {
+      "id": "mu831qno15dfci",
+      "setId": "mu82zdxum9dorr",
+      "book": "Hebrews",
+      "chapter": 11,
+      "verse": 19,
+      "text": "concluding that God was able to raise him up, even from the dead, from which he also received him in a figurative sense.",
+      "created": 1789803929652
+    },
+    {
+      "id": "mu831qnocqiqcr",
+      "setId": "mu82zdxum9dorr",
+      "book": "Hebrews",
+      "chapter": 11,
+      "verse": 20,
+      "text": "By faith Isaac blessed Jacob and Esau concerning things to come.",
+      "created": 1789803929652
+    },
+    {
+      "id": "mu831qno8662as",
+      "setId": "mu82zdxum9dorr",
+      "book": "Hebrews",
+      "chapter": 11,
+      "verse": 21,
+      "text": "By faith Jacob, when he was dying, blessed each of the sons of Joseph, and worshiped, leaning on the top of his staff.",
+      "created": 1789803929652
+    },
+    {
+      "id": "mu831qno8bhv92",
+      "setId": "mu82zdxum9dorr",
+      "book": "Hebrews",
+      "chapter": 11,
+      "verse": 22,
+      "text": "By faith Joseph, when he was dying, made mention of the departure of the children of Israel, and gave instructions concerning his bones.",
+      "created": 1789803929652
+    },
+    {
+      "id": "mu831qnogsid6a",
+      "setId": "mu82zdxum9dorr",
+      "book": "Hebrews",
+      "chapter": 11,
+      "verse": 23,
+      "text": "By faith Moses, when he was born, was hidden three months by his parents, because they saw he was a beautiful child; and they were not afraid of the king’s command.",
+      "created": 1789803929652
+    },
+    {
+      "id": "mu831qnoy8qzlf",
+      "setId": "mu82zdxum9dorr",
+      "book": "Hebrews",
+      "chapter": 11,
+      "verse": 24,
+      "text": "By faith Moses, when he became of age, refused to be called the son of Pharaoh’s daughter,",
+      "created": 1789803929652
+    },
+    {
+      "id": "mu831qno4prtkr",
+      "setId": "mu82zdxum9dorr",
+      "book": "Hebrews",
+      "chapter": 11,
+      "verse": 25,
+      "text": "choosing rather to suffer affliction with the people of God than to enjoy the passing pleasures of sin,",
+      "created": 1789803929652
+    },
+    {
+      "id": "mu831qnoxh3jdv",
+      "setId": "mu82zdxum9dorr",
+      "book": "Hebrews",
+      "chapter": 11,
+      "verse": 26,
+      "text": "esteeming the reproach of Christ greater riches than the treasures in Egypt; for he looked to the reward.",
+      "created": 1789803929652
+    },
+    {
+      "id": "mu831qnoq1enr4",
+      "setId": "mu82zdxum9dorr",
+      "book": "Hebrews",
+      "chapter": 11,
+      "verse": 27,
+      "text": "By faith he forsook Egypt, not fearing the wrath of the king; for he endured as seeing Him who is invisible.",
+      "created": 1789803929652
+    },
+    {
+      "id": "mu831qnod6caxh",
+      "setId": "mu82zdxum9dorr",
+      "book": "Hebrews",
+      "chapter": 11,
+      "verse": 28,
+      "text": "By faith he kept the Passover and the sprinkling of blood, lest he who destroyed the firstborn should touch them.",
+      "created": 1789803929652
+    },
+    {
+      "id": "mu831qno8r9wnp",
+      "setId": "mu82zdxum9dorr",
+      "book": "Hebrews",
+      "chapter": 11,
+      "verse": 29,
+      "text": "By faith they passed through the Red Sea as by dry land, whereas the Egyptians, attempting to do so, were drowned.",
+      "created": 1789803929652
+    },
+    {
+      "id": "mu831qnozkbpjl",
+      "setId": "mu82zdxum9dorr",
+      "book": "Hebrews",
+      "chapter": 11,
+      "verse": 30,
+      "text": "By faith the walls of Jericho fell down after they were encircled for seven days.",
+      "created": 1789803929652
+    },
+    {
+      "id": "mu831qnojy383a",
+      "setId": "mu82zdxum9dorr",
+      "book": "Hebrews",
+      "chapter": 11,
+      "verse": 31,
+      "text": "By faith the harlot Rahab did not perish with those who did not believe, when she had received the spies with peace.",
+      "created": 1789803929652
+    },
+    {
+      "id": "mu831qnox9si69",
+      "setId": "mu82zdxum9dorr",
+      "book": "Hebrews",
+      "chapter": 11,
+      "verse": 32,
+      "text": "And what more shall I say? For the time would fail me to tell of Gideon and Barak and Samson and Jephthah, also of David and Samuel and the prophets:",
+      "created": 1789803929652
+    },
+    {
+      "id": "mu831qno2p2vzh",
+      "setId": "mu82zdxum9dorr",
+      "book": "Hebrews",
+      "chapter": 11,
+      "verse": 33,
+      "text": "who through faith subdued kingdoms, worked righteousness, obtained promises, stopped the mouths of lions,",
+      "created": 1789803929652
+    },
+    {
+      "id": "mu831qnor8hrdy",
+      "setId": "mu82zdxum9dorr",
+      "book": "Hebrews",
+      "chapter": 11,
+      "verse": 34,
+      "text": "quenched the violence of fire, escaped the edge of the sword, out of weakness were made strong, became valiant in battle, turned to flight the armies of the aliens.",
+      "created": 1789803929652
+    },
+    {
+      "id": "mu831qnos4y8if",
+      "setId": "mu82zdxum9dorr",
+      "book": "Hebrews",
+      "chapter": 11,
+      "verse": 35,
+      "text": "Women received their dead raised to life again. Others were tortured, not accepting deliverance, that they might obtain a better resurrection.",
+      "created": 1789803929652
+    },
+    {
+      "id": "mu831qnons2e2k",
+      "setId": "mu82zdxum9dorr",
+      "book": "Hebrews",
+      "chapter": 11,
+      "verse": 36,
+      "text": "Still others had trial of mockings and scourgings, yes, and of chains and imprisonment.",
+      "created": 1789803929652
+    },
+    {
+      "id": "mu831qno3ygsuu",
+      "setId": "mu82zdxum9dorr",
+      "book": "Hebrews",
+      "chapter": 11,
+      "verse": 37,
+      "text": "They were stoned, they were sawn in two, were tempted, were slain with the sword. They wandered about in sheepskins and goatskins, being destitute, afflicted, tormented –",
+      "created": 1789803929652
+    },
+    {
+      "id": "mu831qno1z15vh",
+      "setId": "mu82zdxum9dorr",
+      "book": "Hebrews",
+      "chapter": 11,
+      "verse": 38,
+      "text": "of whom the world was not worthy. They wandered in deserts and mountains, in dens and caves of the earth.",
+      "created": 1789803929652
+    },
+    {
+      "id": "mu831qno0t63kb",
+      "setId": "mu82zdxum9dorr",
+      "book": "Hebrews",
+      "chapter": 11,
+      "verse": 39,
+      "text": "And all these, having obtained a good testimony through faith, did not receive the promise,",
+      "created": 1789803929652
+    },
+    {
+      "id": "mu831qnoolv6h5",
+      "setId": "mu82zdxum9dorr",
+      "book": "Hebrews",
+      "chapter": 11,
+      "verse": 40,
+      "text": "God having provided something better for us, that they should not be made perfect apart from us.",
+      "created": 1789803929652
     }
   ],
-  "attempts": 448,
+  "attempts": 483,
   "created": 1788875345222
 }
