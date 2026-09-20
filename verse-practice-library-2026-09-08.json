@@ -35,6 +35,12 @@
       "name": "Hebrews 11",
       "description": "",
       "created": 1789803819858
+    },
+    {
+      "id": "mu9uq6b9fcb6go",
+      "name": "Isaiah 55",
+      "description": "",
+      "created": 1789910885493
     }
   ],
   "verses": [
@@ -1481,8 +1487,125 @@
       "verse": 40,
       "text": "God having provided something better for us, that they should not be made perfect apart from us.",
       "created": 1789803929652
+    },
+    {
+      "id": "mu9uqgnl5nnirz",
+      "setId": "mu9uq6b9fcb6go",
+      "book": "Isaiah",
+      "chapter": 55,
+      "verse": 1,
+      "text": "“Ho! Everyone who thirsts, come to the waters; and you who have no money, come, buy and eat. Yes, come, buy wine and milk without money and without price.",
+      "created": 1789910898897
+    },
+    {
+      "id": "mu9uqgnlqr64jj",
+      "setId": "mu9uq6b9fcb6go",
+      "book": "Isaiah",
+      "chapter": 55,
+      "verse": 2,
+      "text": "Why do you spend money for what is not bread, and your wages for what does not satisfy? Listen carefully to Me, and eat what is good, and let your soul delight itself in abundance.",
+      "created": 1789910898897
+    },
+    {
+      "id": "mu9uqgnl4mjkv6",
+      "setId": "mu9uq6b9fcb6go",
+      "book": "Isaiah",
+      "chapter": 55,
+      "verse": 3,
+      "text": "Incline your ear, and come to Me. Hear, and your soul shall live; and I will make an everlasting covenant with you – the sure mercies of David.",
+      "created": 1789910898897
+    },
+    {
+      "id": "mu9uqgnlmz37t4",
+      "setId": "mu9uq6b9fcb6go",
+      "book": "Isaiah",
+      "chapter": 55,
+      "verse": 4,
+      "text": "Indeed I have given him as a witness to the people, a leader and commander for the people.",
+      "created": 1789910898897
+    },
+    {
+      "id": "mu9uqgnldr1iym",
+      "setId": "mu9uq6b9fcb6go",
+      "book": "Isaiah",
+      "chapter": 55,
+      "verse": 5,
+      "text": "Surely you shall call a nation you do not know, and nations who do not know you shall run to you, because of the Lord your God, and the Holy One of Israel; for He has glorified you.”",
+      "created": 1789910898897
+    },
+    {
+      "id": "mu9uqgnltsi8n7",
+      "setId": "mu9uq6b9fcb6go",
+      "book": "Isaiah",
+      "chapter": 55,
+      "verse": 6,
+      "text": "Seek the Lord while He may be found, call upon Him while He is near.",
+      "created": 1789910898897
+    },
+    {
+      "id": "mu9uqgnl6lpqn0",
+      "setId": "mu9uq6b9fcb6go",
+      "book": "Isaiah",
+      "chapter": 55,
+      "verse": 7,
+      "text": "Let the wicked forsake his way, and the unrighteous man his thoughts; let him return to the Lord, and He will have mercy on him; and to our God, for He will abundantly pardon.",
+      "created": 1789910898897
+    },
+    {
+      "id": "mu9uqgnlkp74cf",
+      "setId": "mu9uq6b9fcb6go",
+      "book": "Isaiah",
+      "chapter": 55,
+      "verse": 8,
+      "text": "“For My thoughts are not your thoughts, nor are your ways My ways,” says the Lord.",
+      "created": 1789910898897
+    },
+    {
+      "id": "mu9uqgnlox14fl",
+      "setId": "mu9uq6b9fcb6go",
+      "book": "Isaiah",
+      "chapter": 55,
+      "verse": 9,
+      "text": "“For as the heavens are higher than the earth, so are My ways higher than your ways, and My thoughts than your thoughts.",
+      "created": 1789910898897
+    },
+    {
+      "id": "mu9uqgnlggqgdn",
+      "setId": "mu9uq6b9fcb6go",
+      "book": "Isaiah",
+      "chapter": 55,
+      "verse": 10,
+      "text": "“For as the rain comes down, and the snow from heaven, and do not return there, but water the earth, and make it bring forth and bud, that it may give seed to the sower and bread to the eater,",
+      "created": 1789910898897
+    },
+    {
+      "id": "mu9uqgnlumx438",
+      "setId": "mu9uq6b9fcb6go",
+      "book": "Isaiah",
+      "chapter": 55,
+      "verse": 11,
+      "text": "so shall My word be that goes forth from My mouth; it shall not return to Me void, but it shall accomplish what I please, and it shall prosper in the thing for which I sent it.",
+      "created": 1789910898897
+    },
+    {
+      "id": "mu9uqgnl6wz2q1",
+      "setId": "mu9uq6b9fcb6go",
+      "book": "Isaiah",
+      "chapter": 55,
+      "verse": 12,
+      "text": "“For you shall go out with joy, and be led out with peace; the mountains and the hills shall break forth into singing before you, and all the trees of the field shall clap their hands.",
+      "created": 1789910898897
+    },
+    {
+      "id": "mu9uqgnli27kis",
+      "setId": "mu9uq6b9fcb6go",
+      "book": "Isaiah",
+      "chapter": 55,
+      "verse": 13,
+      "text": "Instead of the thorn shall come up the cypress tree, and instead of the brier shall come up the myrtle tree; and it shall be to the Lord for a name, for an everlasting sign that shall not be cut off.”",
+      "created": 1789910898897
     }
   ],
-  "attempts": 483,
+  "attempts": 628,
   "created": 1788875345222
 }
